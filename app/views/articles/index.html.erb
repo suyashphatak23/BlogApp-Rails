@@ -1,0 +1,15 @@
+<h1> All Articles</h1>
+
+<ol>
+    <% @articles.each do |article| %>
+        <li>
+            <h2>
+                <%= link_to article.title, article %>
+            </h2>
+
+            <p>
+                <%= article.body %>
+            </p>
+        </li>
+        <% end %>
+</ol>
