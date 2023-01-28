@@ -1,16 +1,13 @@
 <h1> All Articles</h1>
-
-<ol>
+<table style="text-align:center;">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
     <% @articles.each do |article| %>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td><%= link_to article.title, article %></td>
-            <td><%= article.body %></td>
-        </tr>
-        <% end %>
-    </table>
-</ol>
+    <tr>
+        <td><%= link_to article.title, article %></td>
+        <td><%= article.body %></td>
+    </tr>
+    <% end %>
+</table>
