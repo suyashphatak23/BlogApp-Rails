@@ -1,11 +1,13 @@
-<div class="container">
-  <h1 class="display-4"><%= @article.title %></h1>
+<div class="container text-center">
+  <h1 class="display-4 p-2 mt-3 text-uppercase"><%= @article.title %></h1>
   <p><%= @article.body %></p>
-  <ul>
-    <button><%= link_to "Edit", edit_article_path(@article) %></button>
-    <button><%= link_to "Destroy", article_path(@article), data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    } %></button>
-  </ul>
+  <button class="btn btn-primary">
+    <%= link_to "Edit", edit_article_path(@article), class:"nav-link" %>
+  </button>
+  <button class="btn btn-danger">
+    <%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class:"nav-link" %></button>
+
 </div>
