@@ -1,11 +1,11 @@
-<h1><%= @article.title %></h1>
-
-<p><%= @article.body %></p>
-
-<ul>
-  <button><%= link_to "Edit", edit_article_path(@article) %></button>
-  <button><%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></button>
-</ul>
+<div class="container">
+  <h1 class="display-4"><%= @article.title %></h1>
+  <p><%= @article.body %></p>
+  <ul>
+    <button><%= link_to "Edit", edit_article_path(@article) %></button>
+    <button><%= link_to "Destroy", article_path(@article), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></button>
+  </ul>
+</div>
