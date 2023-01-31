@@ -1,0 +1,24 @@
+<div class="container text-center">
+  <h1 class="display-4 p-2 mt-3 text-uppercase">
+    <%= @user.username %>'s Profile
+  </h1>
+
+  <%= gravatar_for @user %>
+
+  <p>Username: <%= @user.username %></p>
+  <p>Email: <%= @user.email %></p>
+  <button class="btn btn-primary">
+    <%= link_to "Edit", edit_user_path(@user), class:"nav-link" %>
+  </button>
+  <button class="btn btn-danger">
+    <%= link_to "Destroy", user_path(@user), data: { turbo_method: :delete,
+    turbo_confirm: "Are you sure?" }, class:"nav-link" %>
+  </button>
+</div>
+
+<div class="container text-center">
+  <h1 class="display-4 p2 mt-3 text-uppercase">
+    <%= @user.username %>'s Articles
+  </h1>
+  <%= render 'articles/article' %>
+</div>

@@ -70,7 +70,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    bootsnap (1.15.0)
+    bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     capybara (3.38.0)
@@ -89,7 +89,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
-    globalid (1.0.1)
+    globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -126,7 +126,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.0-x64-mingw-ucrt)
+    nokogiri (1.14.1-x64-mingw-ucrt)
       racc (~> 1.4)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -187,7 +187,7 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
@@ -204,6 +204,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.6)
@@ -228,6 +229,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  will_paginate (~> 3.3)
 
 RUBY VERSION
    ruby 3.1.3p185
