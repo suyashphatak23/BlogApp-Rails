@@ -1,0 +1,28 @@
+<%= form_with model: user do |form| %>
+<div class="container">
+  <%= form.label :username, class:"form-label" %><br />
+  <%= form.text_field :username, class:"form-control text-black" %> <%
+  user.errors.full_messages_for(:username).each do |message| %>
+  <div class="container"><%= message %></div>
+  <% end %>
+</div>
+
+<div class="container">
+  <%= form.label :email, class:"form-label" %><br />
+  <%= form.email_field :email, class:"form-control text-black" %><br />
+  <% user.errors.full_messages_for(:email).each do |message| %>
+  <div class="container"><%= message %></div>
+  <% end %>
+</div>
+
+<div class="container">
+  <%= form.label :password_digest, class:"form-label" %><br />
+  <%= form.password_field :password_digest, class:"form-control text-black"
+  %><br />
+  <% user.errors.full_messages_for(:password_digest).each do |message| %>
+  <div class="container"><%= message %></div>
+  <% end %>
+</div>
+
+<div class="container"><%= (form.submit :class=>'btn btn-primary') %></div>
+<% end %>
