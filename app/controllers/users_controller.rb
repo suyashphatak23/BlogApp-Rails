@@ -34,8 +34,7 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
-
-        redirect_to "/users/show", status: :see_other
+        redirect_to "/users", status: :see_other
     end
     
     def show
