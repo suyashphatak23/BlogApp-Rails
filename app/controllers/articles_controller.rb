@@ -1,7 +1,5 @@
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show, :home]
-
   def home
   end
 
@@ -19,6 +17,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
+    puts @article
     if @article.save
       redirect_to @article
     else
