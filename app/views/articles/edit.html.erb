@@ -1,8 +1,4 @@
 <div class="container text-center">
 	<h1 class="display-4">Edit Article</h1>
-	<% if logged_in? && article.user == current_user %> 
-    <%= render "form", article: @article %> 
-    <% else %>
-	<p>Not Allowed</p>
-	<% end %>
+	<%= render "form", article: @article %>
 </div>

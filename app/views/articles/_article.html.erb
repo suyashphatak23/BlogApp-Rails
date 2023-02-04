@@ -1,20 +1,37 @@
 <div class="container">
-  <table class="table table-dark table-bordered table-hover">
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th>Updated At</th>
-    </tr>
-    <% @articles.each do |article| %>
-    <tr class="table-light">
-      <td><%= link_to article.title, article, class:"nav-link" %></td>
-      <td><%= article.body %></td>
-      <td class="text-capitalize"><%= article.user.username %></td>
-      <td class="text-capitalize">
-        <%= time_ago_in_words(article.updated_at) %> Ago
-      </td>
-    </tr>
-    <% end %>
-  </table>
+	<% @articles.each do |article| %>
+	<div class="row justify-content-md-center">
+		<div class="col-8 mt-4">
+			<div class="card text-center shadow mb-5 bg-dark rounded text-white">
+				<div class="card-header font-italic">
+					<% if article.user %> 
+          <i>BY</i> <%= link_to article.user.username, user_path(article.user), class:"nav-link text-uppercase fw-bold" %> 
+          <% end %>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">
+						<%= link_to article.title, article_path(article), class:
+						"nav-link text-success text-uppercase" %>
+					</h5>
+					<p class="card-text"><%= truncate(article.body, length: 100) %></p>
+					<%= link_to "View", article_path(article), class: "btn
+					btn-outline-success" %> 
+          <% if logged_in? && article.user == current_user %> 
+          <%= link_to "Edit", edit_article_path(article), class:
+					"btn btn-outline-info" %> 
+          <%= link_to "Delete", article_path(article),
+					class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are
+					you sure?"} %> 
+          <% end %>
+				</div>
+				<div class="card-footer text-muted">
+					<small
+						>Created <%= time_ago_in_words(article.created_at) %> ago, edited
+						<%= time_ago_in_words(article.updated_at) %> ago</small
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
 </div>

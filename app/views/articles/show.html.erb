@@ -1,12 +1,29 @@
-<div class="container text-center">
-	<h1 class="display-4 p-2 mt-3 text-uppercase"><%= @article.title %></h1>
-	<p><%= @article.body %></p>
-	<p>By: <%= @article.user.username %></p>
-	<button class="btn btn-primary">
-		<%= link_to "Edit", edit_article_path(@article), class:"nav-link" %>
-	</button>
-	<button class="btn btn-danger">
-		<%= link_to "Destroy", article_path(@article), data: { turbo_method:
-		:delete, turbo_confirm: "Are you sure?" }, class:"nav-link" %>
-	</button>
+<div class="container">
+	<h2 class="text-center mt-4 text-uppercase"><%= @article.title %></h2>
+
+	<div class="row justify-content-md-center">
+		<div class="col-8 mt-4">
+			<div class="card text-center shadow mb-5 bg-dark rounded text-white">
+				<div class="card-header font-italic">
+					by <%= @article.user.username if @article.user %> 
+					<%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+				</div>
+				<div class="card-body">
+					<div class="card-text text-left">
+						<%= simple_format(@article.body) %>
+					</div>
+					<% if logged_in? && @article.user == current_user %> 
+					<%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %> 
+					<%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %> 
+					<% end %>
+				</div>
+				<div class="card-footer text-muted">
+					<small>
+						Created <%= time_ago_in_words(@article.created_at) %> ago, edited
+						<%= time_ago_in_words(@article.updated_at) %> ago
+					</small>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

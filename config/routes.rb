@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # Articles routes
-  root "articles#home"
+  root "pages#home"
+  get 'about', to: 'pages#about'
   resources :articles
 
   # signup route

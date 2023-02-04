@@ -1,24 +1,20 @@
-<div class="container text-center">
-  <h1 class="display-4 p-2 mt-3 text-uppercase">
-    <%= @user.username %>'s Profile
-  </h1>
+<div class="container">
+  <h1 class="text-center mt-4 text-uppercase"><%= @user.username %>'s profile</h1>
 
   <%= gravatar_for @user %>
+  <% if logged_in? && @user == current_user %>
+    <div class="text-center mt-4">
+      <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+    </div>
+  <% end %>
 
-  <p>Username: <%= @user.username %></p>
-  <p>Email: <%= @user.email %></p>
-  <button class="btn btn-primary">
-    <%= link_to "Edit", edit_user_path(@user), class:"nav-link" %>
-  </button>
-  <button class="btn btn-danger">
-    <%= link_to "Destroy", user_path(@user), data: { turbo_method: :delete,
-    turbo_confirm: "Are you sure?" }, class:"nav-link" %>
-  </button>
+  <h3 class="text-center mt-4">Articles</h3>
+  <%= render 'articles/article' %>
 </div>
 
 <div class="container text-center">
-  <h1 class="display-4 p2 mt-3 text-uppercase">
-    <%= @user.username %>'s Articles
-  </h1>
-  <%= render 'articles/article' %>
+	<div class="apple_pagination">
+		<div class="page_info"><%= page_entries_info @articles %></div>
+		<%= will_paginate @articles, :container => false %>
+	</div>
 </div>

@@ -1,14 +1,14 @@
 class ArticlesController < ApplicationController
 
-  def home
-  end
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:show, :index, :home]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 3)
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     puts @article
     if @article.save
+      flash[:notice] = "Article was created successfully."
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
@@ -27,13 +28,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-
     if @article.update(article_params)
+      flash[:notice] = "Article was updated successfully."
       redirect_to @article
     else
       render :edit, status: :unprocessable_entity
@@ -41,14 +40,26 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
-
+    flash[:notice] = "Article was destroyed successfully."
     redirect_to root_path, status: :see_other
   end
 
   private
-    def article_params
-      params.require(:article).permit(:title, :body)
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :body)
+  end
+
+  def require_same_user
+    if current_user != @article.user
+      flash[:alert] = "You can only edit or delete your own article"
+      redirect_to @article
     end
+  end
+
 end
