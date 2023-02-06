@@ -51,6 +51,8 @@ gem "bootsnap", require: false
 # Pagination gem
 gem 'will_paginate', '~> 3.3'
 
+# User authentication gem
+gem "devise"  
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

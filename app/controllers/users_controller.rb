@@ -19,7 +19,7 @@ class UsersController < ApplicationController
             flash[:notice] = "Welcome to the Alpha Blog #{@user.username}, you have successfully signed up"
             redirect_to @user
         else
-            render :new, :unprocessable_entity
+            render :new
         end
     end
 
@@ -31,15 +31,16 @@ class UsersController < ApplicationController
             flash[:notice] = "Your account information was successfully updated"
             redirect_to @user
         else
-            render :edit, status: :unprocessable_entity
+            flash.now[:alert] = "Error in updating profile"
+            render :edit
         end
     end
     
     def destroy
         @user.destroy
-        session[:user_id] = nil
+        session[:user_id] = nil if @user == current_user
         flash[:notice] = "Account and all associated articles successfully deleted"
-        redirect_to "/users", status: :see_other
+        redirect_to "/users"
     end
     
     def show
@@ -56,8 +57,8 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def require_same_user
-        if current_user != @user
+    def require_same_user 
+        if current_user != @user && !current_user.admin?
           flash[:alert] = "You can only edit or delete your own account"
           redirect_to @user
         end

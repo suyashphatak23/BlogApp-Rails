@@ -17,7 +17,7 @@
 
 <div class="container">
   <%= form.label :password_digest, class:"form-label" %><br />
-  <%= form.password_field :password_digest, class:"form-control text-black"
+  <%= form.password_field :password, class:"form-control text-black"
   %><br />
   <% user.errors.full_messages_for(:password_digest).each do |message| %>
   <div class="container"><%= message %></div>
