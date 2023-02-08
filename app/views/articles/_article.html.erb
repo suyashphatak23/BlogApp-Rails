@@ -13,7 +13,7 @@
 						<%= link_to article.title, article_path(article), class:
 						"nav-link text-success text-uppercase" %>
 					</h5>
-					<p class="card-text"><%= truncate(article.body, length: 100) %></p>
+					<p class="card-text"><%= truncate(strip_tags(article.body.to_s), length: 100) %></p>
 					<%= link_to "View", article_path(article), class: "btn
 					btn-outline-success" %> 
           <% if logged_in? && (article.user == current_user || current_user.admin?)	 %> 
