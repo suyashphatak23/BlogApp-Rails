@@ -1,107 +1,79 @@
-<%# Navbar %>
-<nav
-	class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-	data-bs-theme="dark"
->
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-light px-0 py-3 sticky-top shadow-lg">
 	<div class="container">
-		<%= link_to "RAILS BLOG", root_path, class: "navbar-brand", id: "logo" %>
+		<!-- Logo -->
+		<%= link_to "Knowledge.", root_path, class: "navbar-brand text-uppercase", id: "logo" %>
+		<!-- Navbar toggle -->
 		<button
 			class="navbar-toggler"
 			type="button"
 			data-bs-toggle="collapse"
-			data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
+			data-bs-target="#navbarCollapse"
+			aria-controls="navbarCollapse"
 			aria-expanded="false"
 			aria-label="Toggle navigation"
 		>
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<%= link_to "Home", root_path, class: "nav-link" %>
-				</li>
-				<li class="nav-item">
-					<%= link_to "About", about_path, class: "nav-link" %>
-				</li>
-				<li class="nav-item">
-					<%= link_to "Bloggers", users_path, class: "nav-link" %>
-				</li>
+		<!-- Collapse -->
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<!-- Left Navigation -->
+			<div class="navbar-nav mx-lg-auto">	
+				<%= link_to "Home", root_path, class: "nav-item nav-link active" %>
+				<%= link_to "About", about_path, class: "nav-item nav-link" %>
+				<%= link_to "Community", users_path, class: "nav-item nav-link" %>
 				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
-						Articles
-					</a>
-					<ul class="dropdown-menu">
-						<% if logged_in? %>
-						<%= link_to "Create new article", new_article_path, class:
-						"dropdown-item" %> 
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Articles  </a>
+					<ul class="dropdown-menu text-center">
+						<% if logged_in? %> 
+							<li><%= link_to "Create New Article", new_article_path, class: "dropdown-item nav-item nav-link" %></li> 
 						<% end %>
-						<%= link_to "View articles", articles_path,
-						class: "dropdown-item" %>
-						<li><hr class="dropdown-divider" /></li>
-						<li>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</li>
+						<li><%= link_to "View Articles", articles_path, class: "dropdown-item nav-item nav-link" %></li>
 					</ul>
 				</li>
-				
 				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
-					  Categories
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <% if logged_in? && current_user.admin? %>
-						<%= link_to "Create new category", new_category_path, class: "dropdown-item" %>
-					  <% end %>  
-					  <%= link_to "View categories", categories_path, class: "dropdown-item" %>
-					</div>
-				</li>
-
-				<% if logged_in? %>
-
-				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
-						<%= "(Admin)" if current_user.admin? %> Profile (<%= current_user.username %>)
-					</a>
-					<ul class="dropdown-menu">
-						<%= link_to "View Your Profile", user_path(current_user), class:
-						"dropdown-item" %> 
-						<%= link_to "Edit Your Profile", edit_user_path(current_user),
-						class: "dropdown-item" %>
-						<%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { confirm: "Are you sure?" } %> 
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Categories  </a>
+					<ul class="dropdown-menu text-center">
+						<% if logged_in? && current_user.admin? %> 
+							<li><%= link_to "Create New Category", new_category_path, class: "dropdown-item nav-item nav-link" %></li> 
+						<% end %>
+						<li><%= link_to "View Categories", categories_path, class: "dropdown-item nav-item nav-link" %></li>
 					</ul>
 				</li>
-				<li class="nav-item">
-					<%= link_to 'Logout', logout_path, class: "nav-link", method: :delete
-					%>
+			</div>
+
+
+			<!-- Right navigation -->
+			<% if logged_in? %>
+			<div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+				<%= image_tag ("/assets/person_3.jpg"), class: "nav-profile-image"%>
+			</div>
+			<div class="navbar-nav ms-lg-4">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  <%= "(Admin)" if current_user.admin? %> <span class="text-uppercase fw-bold"><%=
+						current_user.username %></span>  </a>
+					<ul class="dropdown-menu text-center">
+						<li><%= link_to "View Profile", user_path(current_user), class: "dropdown-item nav-item nav-link" %></li> 
+						<li><%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item nav-item nav-link" %></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><%= link_to "Delete profile", user_path(current_user), class: "dropdown-item nav-item nav-link text-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+						<li><hr class="dropdown-divider"></li>
+						<li><%= link_to 'Logout', logout_path, class: "dropdown-item nav-item nav-link text-warning", method: :delete %></li>
+					</ul>
 				</li>
-				<% else %>
-				<li class="nav-item">
-					<%= link_to 'Log In', login_path, class: "nav-link" %>
-				</li>
-				<li class="nav-item">
-					<%= link_to 'Sign Up', signup_path, class: "nav-link" %>
-				</li>
-				<% end %>
-			</ul>
+			</div>
+
+			
+			<% else %>
+			<div class="navbar-nav ms-lg-4">
+				<%= link_to 'Log In', login_path, class: "nav-item nav-link" %>
+			</div>
+			<!-- Action -->
+			<div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+				<%= link_to 'Sign Up', signup_path, class: "btn btn-sm btn-outline-light w-full w-lg-auto" %>
+			</div>
+			<% end %>
 		</div>
 	</div>
 </nav>
+<!-- Navbar End -->

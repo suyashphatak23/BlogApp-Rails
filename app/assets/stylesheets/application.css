@@ -1,3 +1,74 @@
+/* 
+font-family: 'Dancing Script', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+
+/* Global Style Start */
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+	font-family: "Raleway", sans-serif;
+	margin-bottom: 0.7rem;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Global Style End */
+
+/* Navbar Start */
+.navbar-brand {
+	font-size: 35px;
+	font-family: "Dancing Script", cursive;
+	font-weight: bold;
+}
+
+.navbar .nav-item {
+	font-family: "Oswald", sans-serif;
+	margin-right: 1rem;
+	font-size: 19px;
+}
+
+.navbar .nav-item .dropdown-menu {
+	display: none;
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+	display: block;
+}
+.navbar .nav-item .dropdown-menu {
+	margin-top: 0;
+}
+
+.navbar .nav-item .dropdown-menu .dropdown-item {
+	font-size: 17px;
+	padding: 0.5rem;
+}
+
+.nav-profile-image {
+	border-radius: 50%;
+	width: 45px;
+	height: auto;
+}
+/* Navbar End */
+
 /* Pagination Start */
 .apple_pagination {
 	color: white;
@@ -43,7 +114,5 @@
 /* Pagination End */
 
 /* Footer Start */
-#sticky-footer {
-	flex-shrink: none;
-}
+
 /* Footer End */
