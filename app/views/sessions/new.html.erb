@@ -1,21 +1,49 @@
-<div class="container text-center">
-  <h1 class="display-4 text-uppercase">Login</h1>
-  <%= render 'layouts/messages' %>
-  <%= form_with(scope: :session, url: login_path, class: "p-3 mb-3 rounded",
-  local: true) do |form| %>
-
+<section class="login-form">
   <div class="container">
-    <%= form.label :email, class:"form-label" %><br />
-    <%= form.email_field :email, class:"form-control text-black" %><br />
-  </div>
+    <div class="row justify-content-center">
+      <h1 class="display-4 text-uppercase text-center">Login</h1>
+      <%= render 'layouts/messages' %>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10">
+        <div class="wrap d-md-flex">
+          <div class="login-img"></div>
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h3 class="mb-4 login-form-heading">Sign In</h3>
+              </div>
+              <div class="w-100">
+                <p class="social-media d-flex justify-content-end">
+                  <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fa-brands fa-twitter"></i></a>
+                </p>
+              </div>
+            </div>
 
-  <div class="container">
-    <%= form.label :password, class:"form-label" %><br />
-    <%= form.password_field :password, class:"form-control text-black" %><br />
-  </div>
+            <%= form_with(scope: :session, url: login_path, class: "", local: true) do |form| %>
+              <div class="login-form-group mb-3">
+                <%= form.label :email, class:"login-label" %><br />
+                <%= form.email_field :email, class:"login-form-control", placeholder:"Enter your email" %><br />
+              </div>
 
-  <div class="container">
-    <%= form.submit "Log In" , class:'btn btn-primary' %>
+              <div class="login-form-group mb-3">
+                <%= form.label :password, class:"login-label" %><br />
+                <%= form.password_field :password, class:"login-form-control", placeholder:"Enter your password" %><br />
+              </div>
+
+              <div class="login-form-group">
+                <%= form.submit "Log In" , class:'login-form-control btn btn-primary rounded submit-btn px-3' %>
+              </div>
+            <p class="text-center mt-3">
+              Not a member? <a class="login-register-link" data-toggle="tab" href="#">Sign Up</a>
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
+</section>
