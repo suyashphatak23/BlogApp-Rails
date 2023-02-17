@@ -180,10 +180,6 @@ a {
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-.login-register-link{
-
-}
-
 .submit-btn{
 	background: #e3b04b !important;
 	border: 1px solid #e3b04b !important;
@@ -191,6 +187,122 @@ a {
 }
 
 /* Login Form End */
+
+
+/* Article Detail View Start */
+.full-article{
+	padding: 0 5rem;
+}
+
+.article-profile-image{
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+}
+
+.divider{
+	padding: 1rem;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.category{
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+.category-item{
+	padding: 0 1rem;
+}
+
+category-btn{
+
+}
+
+.category-item a{
+	text-decoration: none;
+	font-weight: 400;
+	border-style: solid;
+	padding: 7px 16px 9px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 99em;
+	border-color: rgba(132, 133, 133, 1);
+	background: rgba(132, 133, 133, 1);
+	color: rgba(255, 255, 255, 1);
+	fill: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0 5px;
+}
+
+.category-item a:hover{
+	background: rgb(75, 73, 73);
+	color:white ;
+	transition: 0.2s ease-in-out;
+}
+
+.title{
+	word-wrap: break-word;
+	padding: 0.5rem;
+}
+
+.article-title{
+	letter-spacing: -0.016em;
+	line-height: 40px;
+	margin-top: 0.6em;
+	font-size: 36px;
+	font-weight: 700;
+	font-style: normal;
+	color: rgba(41, 41, 41, 1);
+	font-family: 'Roboto', sans-serif;
+}
+
+.description{
+	word-wrap: break-word;
+	padding: 0 6rem;
+	margin-bottom: 2rem;
+}
+
+.article-description{
+	letter-spacing: 0;
+	line-height: 28px;
+	margin-top: 1px;
+	font-size: 24px;
+	font-weight: 400;
+	font-style: normal;
+	color: rgba(117, 117, 117, 1);
+	font-family: 'Roboto', sans-serif;
+}
+
+.banner{
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.banner-image{
+	cursor: zoom-in;
+}
+
+.article-body{
+	letter-spacing: -0.003em;
+	line-height: 32px;
+	margin-top: 2em;
+	font-size: 20px;
+	margin-bottom: -0.46em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-style: normal;
+	word-break: break-word;
+	color: rgba(41, 41, 41, 1);
+	font-weight: 400;
+}
+
+/* Article Detail View End */
+
+
 
 
 /* Pagination Start */

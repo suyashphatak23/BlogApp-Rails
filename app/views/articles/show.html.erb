@@ -1,3 +1,68 @@
+<div class="container mt-4">
+	<article class="full-article">
+
+		<!--User Profile-->
+		<div class="col-md-12">
+			<div class="d-flex flex-column justify-content-center align-items-center">
+				<div class="p-2">
+					<%= image_tag ("/assets/person_3.jpg"), class:"article-profile-image" %>
+				</div>
+				<div class="p-2 text-capitalize text-center">
+					<span class="fw-bold"><%= link_to @article.user.username, user_path(@article.user) %></span><br>
+					<span class="text-muted">Updated <%= time_ago_in_words(@article.updated_at) %> Ago</span>
+				</div>
+			</div>
+			<!-- Article Control Buttons -->
+			<% if logged_in? &&  (@article.user == current_user || current_user.admin?) %>
+				<div class="d-flex flex-row justify-content-center align-items-center">
+					<%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-dark mx-2" %>
+					<%= link_to "Delete", article_path(@article), class: "btn btn-outline-dark mx-2", method: :delete, data: {confirm: "Are you sure?"} %>
+				</div>
+			<% end %>
+
+			<!--Divider-->
+			<div class="divider">
+				<%= image_tag ("/assets/b.png"), class:"divider-image", alt:"Divider" %>
+			</div>
+		</div>
+
+		<!--Article Start-->
+		<div class="col-md-12">
+
+<!--			Title-->
+			<div class="text-center title">
+				<h1 class="article-title"><%= @article.title %></h1>
+			</div>
+
+<!--			Description-->
+			<div class="text-center description">
+				<h1 class="article-description"><%= @article.body %></h1>
+			</div>
+
+			<!--Categories-->
+			<% if @article.categories.any? %>
+				<div class="text-center category mx-3">
+					<h5 class="category-item btn category-btn"><%= render @article.categories %></h5>
+				</div>
+			<% end %>
+
+<!--			Banner Image-->
+			<div class="banner">
+				<%= link_to image_tag(@article.banner_resize, class:"rounded mx-auto d-block shadow-lg"), @article.banner, class:"banner-image" %>
+			</div>
+
+<!--			Article Body -->
+			<div class="article-body p-2 mt-2">
+				<%= @article.content %>
+			</div>
+		</div>
+		<!--Article End-->
+
+	</article>
+</div>
+
+<hr>
+
 <div class="container">
 	<h2 class="text-center mt-4 text-uppercase"><%= @article.title %></h2>
 
