@@ -22,24 +22,30 @@
 				<%= link_to "Home", root_path, class: "nav-item nav-link active" %>
 				<%= link_to "About", about_path, class: "nav-item nav-link" %>
 				<%= link_to "Community", users_path, class: "nav-item nav-link" %>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Articles  </a>
-					<ul class="dropdown-menu text-center">
-						<% if logged_in? %> 
-							<li><%= link_to "Create New Article", new_article_path, class: "dropdown-item nav-item nav-link" %></li> 
-						<% end %>
-						<li><%= link_to "View Articles", articles_path, class: "dropdown-item nav-item nav-link" %></li>
-					</ul>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Categories  </a>
-					<ul class="dropdown-menu text-center">
-						<% if logged_in? && current_user.admin? %> 
-							<li><%= link_to "Create New Category", new_category_path, class: "dropdown-item nav-item nav-link" %></li> 
-						<% end %>
-						<li><%= link_to "View Categories", categories_path, class: "dropdown-item nav-item nav-link" %></li>
-					</ul>
-				</li>
+
+				<% if logged_in? %>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Articles  </a>
+						<ul class="dropdown-menu text-center">
+							<li><%= link_to "Create New Article", new_article_path, class: "dropdown-item nav-item nav-link" %></li>
+							<li><%= link_to "View Articles", articles_path, class: "dropdown-item nav-item nav-link" %></li>
+						</ul>
+					</li>
+				<% else %>
+					<li><%= link_to "Articles", articles_path, class: "dropdown-item nav-item nav-link" %></li>
+				<% end %>
+
+				<% if logged_in? && current_user.admin? %>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Categories  </a>
+						<ul class="dropdown-menu text-center">
+							<li><%= link_to "Create New Category", new_category_path, class: "dropdown-item nav-item nav-link" %></li>
+							<li><%= link_to "View Categories", categories_path, class: "dropdown-item nav-item nav-link" %></li>
+						</ul>
+					</li>
+				<% else %>
+					<li><%= link_to "Categories", categories_path, class: "dropdown-item nav-item nav-link" %></li>
+				<% end %>
 			</div>
 
 

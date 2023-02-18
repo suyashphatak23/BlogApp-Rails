@@ -52,7 +52,7 @@
 			</div>
 
 <!--			Article Body -->
-			<div class="article-body p-2 mt-2">
+			<div class="article-body px-5">
 				<%= @article.content %>
 			</div>
 		</div>
@@ -61,42 +61,4 @@
 	</article>
 </div>
 
-<hr>
-
-<div class="container">
-	<h2 class="text-center mt-4 text-uppercase"><%= @article.title %></h2>
-
-	<div class="row justify-content-md-center">
-		<div class="col-8 mt-4">
-			<div class="card text-center shadow mb-5 bg-dark rounded text-white">
-				<div class="card-header font-italic text-uppercase">
-					By <%= @article.user.username if @article.user %> 
-					<%= link_to gravatar_for(@article.user), user_path(@article.user) %>
-					<% if @article.categories.any? %>
-						<div class="mt-2"><%= render @article.categories %></div> 
-					<% end %>
-				</div>
-				<div class="card-body">
-					<div class="card-text text-left">
-						<%= @article.body %>
-					</div>
-					<% if logged_in? &&  (@article.user == current_user || current_user.admin?) %> 
-					<%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %> 
-					<%= link_to "Delete", article_path(@article), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %> 
-					<% end %>
-				</div>
-				<div class="card-footer text-muted">
-					<small>
-						Created <%= time_ago_in_words(@article.created_at) %> ago, edited
-						<%= time_ago_in_words(@article.updated_at) %> ago
-					</small>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<%= link_to image_tag(@article.thumbnail_resize), @article.thumbnail %>
-		<%= link_to image_tag(@article.banner_resize), @article.banner %>		
-	</div>
-</div>
+<%#= link_to image_tag(@article.thumbnail_resize), @article.thumbnail %>
