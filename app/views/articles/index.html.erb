@@ -1,8 +1,16 @@
-<div class="container text-center">
-  <h1 class="display-4">All Articles</h1>
-  <div class="apple_pagination">
+<div class="container">
+  <div class="row justify-content-center mb-5 pb-2">
+    <div class="col-md-7 heading-section text-center ">
+      <h2 class="mb-4">Articles</h2>
+      <p>A small river named Dude flows by their place and supplies it with the necessary regalia. It is a paradigmatic country.</p>
+    </div>
+  </div>
+
+  <%= render "article", article: @article %>
+
+  <div class="apple_pagination mt-3">
     <div class="page_info"><%= page_entries_info @articles %></div>
     <%= will_paginate @articles, :container => false %>
   </div>
-  
-</div><%= render "article", article: @article %>
+</div>
+

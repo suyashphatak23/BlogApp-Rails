@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Article < ApplicationRecord
   belongs_to :user
   has_many :article_categories
@@ -12,10 +10,10 @@ class Article < ApplicationRecord
   validates :body, presence: true, length: { minimum: 5 }
 
   def thumbnail_resize
-    thumbnail.variant(resize_to_limit: [300, 300]).processed
+    thumbnail.variant(resize_to_fill: [300, 330]).processed
   end
 
   def banner_resize
-    banner.variant(resize_to_limit: [800, 700]).processed
+    banner.variant(resize_to_fill: [800, 700]).processed
   end
 end

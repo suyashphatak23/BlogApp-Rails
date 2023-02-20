@@ -1,8 +1,8 @@
-/* 
-font-family: 'Dancing Script', cursive;
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Raleway', sans-serif;
+font-family: 'Poppins', sans-serif;
 */
 
 /* Global Style Start */
@@ -11,7 +11,6 @@ body {
 	padding: 0;
 	font-size: 16px;
 	font-family: "Open Sans", sans-serif;
-	background: -webkit-linear-gradient(left, #E5E6E4, #F2F3F2);
 }
 
 h1,
@@ -23,7 +22,11 @@ h5,
 .display-2,
 .display-3,
 .display-4 {
-	font-family: "Raleway", sans-serif;
+	font-size: 34px;
+	font-weight: 900;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.8);
+	font-family: "Poppins", Arial, sans-serif;
 	margin-bottom: 0.7rem;
 }
 
@@ -46,15 +49,15 @@ a {
 
 /* Navbar Start */
 .navbar-brand {
-	font-size: 35px;
-	font-family: "Dancing Script", cursive;
+	font-size: 32px;
+	font-family: "Poppins", Arial, sans-serif;
 	font-weight: bold;
 }
 
 .navbar .nav-item {
-	font-family: "Oswald", sans-serif;
+	font-family: 'Lato', sans-serif;
 	margin-right: 1rem;
-	font-size: 19px;
+	font-size: 17px;
 }
 
 .navbar .nav-item .dropdown-menu {
@@ -69,14 +72,18 @@ a {
 }
 
 .navbar .nav-item .dropdown-menu .dropdown-item {
-	font-size: 17px;
+	font-size: 16px;
 	padding: 0.5rem;
 }
 
 .nav-profile-image {
 	border-radius: 50%;
-	width: 45px;
-	height: auto;
+}
+
+.username{
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
 }
 /* Navbar End */
 
@@ -218,30 +225,26 @@ a {
 	padding: 0 1rem;
 }
 
-category-btn{
-
-}
-
 .category-item a{
-	text-decoration: none;
-	font-weight: 400;
-	border-style: solid;
-	padding: 7px 16px 9px;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 99em;
-	border-color: rgba(132, 133, 133, 1);
-	background: rgba(132, 133, 133, 1);
-	color: rgba(255, 255, 255, 1);
-	fill: rgba(255, 255, 255, 1);
-	font-size: 14px;
-	line-height: 20px;
-	margin: 0 5px;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.8;
+	font-weight: 500;
+	transition: .3s all ease;
+	color: #f05d23;
+	padding: 5px;
+	margin: 10px 5px 5px 5px;
+	border: 1px solid #f05d23;
+	box-shadow: 0 0.5rem 0.7rem rgba(var(--bs-body-color-rgb),.15)!important;
 }
 
 .category-item a:hover{
-	background: rgb(75, 73, 73);
-	color:white ;
+	background: #f05d23;
+	color: #fff;
+	border: 1px solid #ffdddd;
 	transition: 0.2s ease-in-out;
 }
 
@@ -254,11 +257,11 @@ category-btn{
 	letter-spacing: -0.016em;
 	line-height: 40px;
 	margin-top: 0.6em;
-	font-size: 36px;
+	font-size: 34px;
 	font-weight: 700;
 	font-style: normal;
 	color: rgba(41, 41, 41, 1);
-	font-family: 'Roboto', sans-serif;
+	font-family: "Poppins", Arial, sans-serif;
 }
 
 .description{
@@ -271,11 +274,11 @@ category-btn{
 	letter-spacing: 0;
 	line-height: 28px;
 	margin-top: 1px;
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: 400;
 	font-style: normal;
 	color: rgba(117, 117, 117, 1);
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .banner{
@@ -302,6 +305,150 @@ category-btn{
 
 /* Article Detail View End */
 
+/* Article Card View Start */
+.heading-section h2 {
+	font-size: 34px;
+	font-weight: 900;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.8);
+	font-family: "Poppins", Arial, sans-serif;
+}
+
+.heading-section p {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.8;
+	font-weight: 500;
+	color: #999999;
+}
+
+.category a{
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.8;
+	font-weight: 500;
+	transition: .3s all ease;
+	color: #f05d23;
+	padding: 5px;
+	margin: 10px 5px 5px 5px;
+	border: 1px solid #f05d23;
+	box-shadow: 0 0.5rem 0.7rem rgba(var(--bs-body-color-rgb),.15)!important;
+}
+
+.category a:hover{
+	background: #f05d23;
+	color: #fff;
+	border: 1px solid #ffdddd;
+	transition: 0.2s ease-in-out;
+}
+
+.card{
+	border: none;
+}
+
+.card-body{
+	padding: 1rem;
+	text-align: center;
+}
+
+.card-img-top {
+	width:290px;
+	height: 330px;
+	border-radius: 5px;
+	box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb),.15)!important;
+}
+
+.card-title{
+	color: #000000;
+	font-size: 24px;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: "Poppins", Arial, sans-serif;
+	text-align: center;
+}
+
+.card-title-link{
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.card-text{
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.8;
+	font-weight: 500;
+	color: #999999;
+	text-align: center;
+}
+
+.article-link{
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: 2px;
+	color: #f05d23;
+	cursor: pointer;
+	font-family: "Montserrat", Arial, sans-serif;
+}
+
+.article-link-arrow{
+	font-size: 13px;
+	color: #f05d23;
+}
+
+.article-card-profile-image{
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+}
+
+.card-body .author .info {
+	width: calc(100% - 60px);
+}
+
+.author-label{
+	font-size: 15px;
+	font-weight: 300;
+	color: #b3b3b3;
+	font-family: "Montserrat", Arial, sans-serif;
+	line-height: 1.8;
+	margin-bottom: 0;
+}
+
+.author-name {
+	font-size: 17px;
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.8);
+	text-transform: uppercase;
+	font-family: "Poppins", Arial, sans-serif;
+}
+
+.author-name a {
+	font-weight: 600;
+	color: #000000;
+	text-decoration: underline;
+}
+
+.article-time {
+	color: #000000;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 1.5;
+	font-family: "Montserrat", Arial, sans-serif;
+}
+
+.card-footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	background: #ffffff;
+	border: none;
+}
+/* Article Card View End */
 
 
 

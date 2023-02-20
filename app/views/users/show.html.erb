@@ -1,7 +1,9 @@
 <div class="container">
-  <h1 class="text-center mt-4 text-uppercase"><%= @user.username %>'s profile</h1>
+  <h1 class="text-center mt-4 text-uppercase">
+		<%= @user.username %>'s profile
+	</h1>
 
-  <%= gravatar_for @user %>
+	<%= link_to image_tag(@user.avatar_medium), @user.avatar %>
   <% if logged_in? && @user == current_user %>
     <div class="text-center mt-4">
       <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>

@@ -1,22 +1,18 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-light px-0 py-3 sticky-top shadow-lg">
-	<div class="container">
+<nav id="navbar_top" class="navbar navbar-expand-lg bg-light border-bottom">
+	<div class="container-fluid">
+
 		<!-- Logo -->
-		<%= link_to "Knowledge.", root_path, class: "navbar-brand text-uppercase", id: "logo" %>
+		<%= link_to "Knowledge.", root_path, class: "navbar-brand text-uppercase mx-4", id: "logo" %>
+
 		<!-- Navbar toggle -->
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarCollapse"
-			aria-controls="navbarCollapse"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+
 		<!-- Collapse -->
 		<div class="collapse navbar-collapse" id="navbarCollapse">
+
 			<!-- Left Navigation -->
 			<div class="navbar-nav mx-lg-auto">	
 				<%= link_to "Home", root_path, class: "nav-item nav-link active" %>
@@ -31,6 +27,7 @@
 							<li><%= link_to "View Articles", articles_path, class: "dropdown-item nav-item nav-link" %></li>
 						</ul>
 					</li>
+
 				<% else %>
 					<li><%= link_to "Articles", articles_path, class: "dropdown-item nav-item nav-link" %></li>
 				<% end %>
@@ -51,20 +48,33 @@
 
 			<!-- Right navigation -->
 			<% if logged_in? %>
-			<div class="d-flex align-items-lg-center mt-3 mt-lg-0">
-				<%= image_tag ("/assets/person_3.jpg"), class: "nav-profile-image"%>
-			</div>
 			<div class="navbar-nav ms-lg-4">
+				<div class="d-flex align-items-center" style="margin-right: 5px;">
+					<%= link_to image_tag(current_user.avatar_small, class: "nav-profile-image"), user_path(current_user), class: "nav-profile-image" %>
+				</div>
+
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  <%= "(Admin)" if current_user.admin? %> <span class="text-uppercase fw-bold"><%=
-						current_user.username %></span>  </a>
+					<a class="nav-link dropdown-toggle" href="#">
+						<%= "(Admin)" if current_user.admin? %> <span class="username"> <%= current_user.username %> </span>
+					</a>
 					<ul class="dropdown-menu text-center">
-						<li><%= link_to "View Profile", user_path(current_user), class: "dropdown-item nav-item nav-link" %></li> 
-						<li><%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item nav-item nav-link" %></li>
-						<li><hr class="dropdown-divider"></li>
-						<li><%= link_to "Delete profile", user_path(current_user), class: "dropdown-item nav-item nav-link text-danger", method: :delete, data: { confirm: "Are you sure?" } %>
-						<li><hr class="dropdown-divider"></li>
-						<li><%= link_to 'Logout', logout_path, class: "dropdown-item nav-item nav-link text-warning", method: :delete %></li>
+						<li>
+							<%= link_to "View Profile", user_path(current_user), class: "dropdown-item nav-item nav-link" %>
+						</li>
+						<li>
+							<%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item nav-item nav-link" %>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<%= link_to "Delete profile", user_path(current_user), class: "dropdown-item nav-item nav-link text-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<%= link_to 'Logout', logout_path, class: "dropdown-item nav-item nav-link text-warning", method: :delete %>
+						</li>
 					</ul>
 				</li>
 			</div>
