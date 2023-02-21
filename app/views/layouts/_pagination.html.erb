@@ -1,0 +1,6 @@
+<div class="apple_pagination my-3">
+  <p class="page_info">
+    <%= page_entries_info obj %>
+  </p>
+  <%= will_paginate obj, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>

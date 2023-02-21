@@ -28,7 +28,7 @@
 
 					<!--User Pic-->
 					<div class="d-flex justify-content-center align-items-center">
-						<%= link_to image_tag(current_user.avatar_article, class: "article-card-profile-image"), user_path(current_user), class: "article-card-profile-image" %>
+						<%= link_to image_tag(article.user.avatar_article, class: "article-card-profile-image"), user_path(article.user), class: "article-card-profile-image" %>
 					</div>
 
 

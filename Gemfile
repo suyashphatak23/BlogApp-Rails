@@ -52,6 +52,7 @@ gem 'image_processing', '~> 1.2'
 
 # Pagination gem
 gem 'will_paginate', '~> 3.3'
+gem 'will_paginate-bootstrap-style'
 
 # For testing purpose
 gem 'rexml', require: false

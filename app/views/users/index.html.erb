@@ -33,8 +33,5 @@
 </div>
 
 <div class="container text-center">
-	<div class="apple_pagination">
-		<div class="page_info"><%= page_entries_info @users %></div>
-		<%= will_paginate @users, :container => false %>
-	</div>
+	<%= render "layouts/pagination", obj:@article %>
 </div>

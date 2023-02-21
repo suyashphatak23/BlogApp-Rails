@@ -47,6 +47,19 @@ a {
 }
 /* Global Style End */
 
+/* Pagination Start */
+.apple_pagination{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+/* Pagination End */
+
 /* Navbar Start */
 .navbar-brand {
 	font-size: 32px;
@@ -98,25 +111,25 @@ a {
 /* Article Form End */
 
 /* Login Form Start */
-.login-img{
-	background-image: url("https://neilpatel.com/wp-content/uploads/2017/08/blog.jpg");
-	width: 50%;
-	background-size: cover;
+.login-form{
+	background-image: url("assets/login_bg.jpg");
+	background-position: center;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-size: cover;
+	padding-top:1.5rem;
+	padding-bottom: 3rem;
 }
 
 .login-wrap{
 	position: relative;
-	background: #fff;
-	width: 50%;
+	background:rgba(255,255,255,0.7);
+	width: 100%;
 }
 
 .wrap {
 	width: 100%;
 	overflow: hidden;
-	background: #fff;
-	border-radius: 5px;
+	border-radius: 40px;
 	-webkit-box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
 	-moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
 	box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
@@ -124,8 +137,7 @@ a {
 
 .login-form-heading{
 	line-height: 1.5;
-	font-weight: 400;
-	color: black;
+	font-weight: 500;
 }
 
 .social-media {
@@ -138,15 +150,21 @@ a {
 	width: 40px;
 	height: 40px;
 	background: transparent;
-	border: 1px solid rgba(0, 0, 0, 0.05);
+	border: 1px solid #000;
 	font-size: 16px;
 	margin-right: 5px;
 	border-radius: 50%;
+	opacity: 0.7;
 }
 
 .social-media .social-icon i {
-	color: #999999;
+	color: #000;
 }
+
+.social-media .social-icon:hover {
+	opacity: 1;
+}
+
 
 .fa-brands {
 	display: inline-block;
@@ -161,39 +179,82 @@ a {
 }
 
 .login-label{
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #000;
-	font-weight: 700;
-	margin-bottom: 0.5rem;
-	line-height: 1.8;
-}
-
-.login-form-control{
-	height: 48px;
-	background: #fff;
-	color: #000;
+	font-family: 'Lato', sans-serif;
 	font-size: 16px;
-	border-radius: 5px;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	display: block;
-	width: 100%;
-	padding: 0.375rem 0.75rem;
+	text-transform: capitalize;
 	font-weight: 400;
-	line-height: 1.5;
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
 .submit-btn{
-	background: #e3b04b !important;
-	border: 1px solid #e3b04b !important;
+	font-family: "Montserrat", Arial, sans-serif;
 	color: #fff !important;
+	font-size: 18px;
+	border-radius: 5px;
+	padding: 0.375rem 0.75rem;
+}
+
+.submit-btn:hover{
+	background: rgba(2, 51, 197, 0.9) !important;
+	border: 1px solid #9a4be3 !important;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.login-register-link{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
 }
 
 /* Login Form End */
+
+/* Register Form Start */
+.register-form{
+	background-image: url("assets/register_bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top:1.5rem;
+	padding-bottom: 3rem;
+}
+
+.register-wrap{
+	position: relative;
+	background:rgba(255,255,255,1);
+	width: 100%;
+}
+
+.register-form-heading{
+	line-height: 1.5;
+	font-weight: 500;
+}
+
+.register-label{
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: 400;
+}
+
+.register-submit-btn{
+	font-family: "Montserrat", Arial, sans-serif;
+	color: #fff !important;
+	font-size: 18px;
+	border-radius: 10px;
+	padding: 0.375rem 0.75rem;
+}
+
+.register-submit-btn:hover{
+	background: rgba(2, 197, 70, 0.9) !important;
+	border: 1px solid #4be3cc !important;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.register-login-link{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+}
+/* Register Form End */
 
 
 /* Article Detail View Start */
@@ -306,6 +367,11 @@ a {
 /* Article Detail View End */
 
 /* Article Card View Start */
+.article-listing{
+	padding-top:2rem;
+	padding-bottom: 2.5rem;
+}
+
 .heading-section h2 {
 	font-size: 34px;
 	font-weight: 900;
@@ -316,7 +382,7 @@ a {
 
 .heading-section p {
 	font-family: "Montserrat", Arial, sans-serif;
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 1.8;
 	font-weight: 500;
 	color: #999999;
@@ -442,60 +508,28 @@ a {
 }
 
 .card-footer{
-	position:absolute;
-	bottom:0;
 	width:100%;
 	background: #ffffff;
 	border: none;
 }
 /* Article Card View End */
 
-
-
-/* Pagination Start */
-.apple_pagination {
-	color: white;
-	text-align: center;
-	padding: 1em;
-	cursor: default;
-	margin: 0.3rem;
+/* Category Listing Start */
+.category-listing{
+	padding-top:2rem;
+	padding-bottom: 2.5rem;
 }
-.apple_pagination a,
-.apple_pagination span {
-	padding: 0.7rem 0.8rem;
-	margin: 0.3rem;
-}
-.page_info {
-	padding: 1rem;
-	margin-bottom: 0.5rem;
-}
-
-.apple_pagination .disabled {
-	color: #aaaaaa;
-}
-.apple_pagination .current {
-	font-style: normal;
-	font-weight: bold;
-	background-color: #343a40;
-	display: inline-block;
-	width: 1.7em;
-	height: 1.7em;
-	line-height: 1.5;
-	-moz-border-radius: 1em;
-	-webkit-border-radius: 1em;
-	border-radius: 1em;
-}
-.apple_pagination a {
-	text-decoration: none;
-	color: white;
-}
-.apple_pagination a:hover,
-.apple_pagination a:focus {
-	text-decoration: underline;
-}
-
-/* Pagination End */
+/* Category Listing End*/
 
 /* Footer Start */
+.footer-text{
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+}
 
+.footer-text a{
+	color: wheat;
+}
 /* Footer End */

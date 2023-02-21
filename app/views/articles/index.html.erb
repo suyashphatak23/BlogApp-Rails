@@ -1,16 +1,15 @@
-<div class="container">
-  <div class="row justify-content-center mb-5 pb-2">
-    <div class="col-md-7 heading-section text-center ">
-      <h2 class="mb-4">Articles</h2>
-      <p>A small river named Dude flows by their place and supplies it with the necessary regalia. It is a paradigmatic country.</p>
+<section class="article-listing">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-7 heading-section text-center ">
+        <h2 class="mb-4">Articles</h2>
+        <p>Looking for interesting and informative articles to read? You've come to the right place! Our carefully curated collection of articles covers a wide range of topics, from health and wellness to technology and entertainment. Whether you're looking to learn something new, stay up-to-date on the latest news, or just need a little inspiration, you're sure to find something that catches your eye. Our articles are written by experts in their respective fields and are packed with valuable insights and practical tips. So sit back, relax, and get ready to discover something new!</p>
+      </div>
     </div>
-  </div>
 
-  <%= render "article", article: @article %>
+    <%= render "article", article: @article %>
 
-  <div class="apple_pagination mt-3">
-    <div class="page_info"><%= page_entries_info @articles %></div>
-    <%= will_paginate @articles, :container => false %>
+    <%= render "layouts/pagination", obj:@article %>
   </div>
-</div>
+</section>
 

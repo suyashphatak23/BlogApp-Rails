@@ -1,49 +1,62 @@
 <section class="login-form">
   <div class="container">
-    <div class="row justify-content-center">
-      <h1 class="display-4 text-uppercase text-center">Login</h1>
-      <%= render 'layouts/messages' %>
+    <div class="row justify-content-center mb-3 pb-2">
+      <div class="col-md-7 heading-section text-center ">
+<!--        For Error Messages-->
+        <%= render 'layouts/messages' %>
+
+<!--        Login Heading and description-->
+        <h2 class="mb-4">Login</h2>
+        <p class="fw-bold">Welcome to the login page ! Please enter your credentials to access your account. If you don't have an account yet, you can create one by clicking on the "Sign up" button. Thank you for using our service.</p>
+      </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-12 col-lg-10">
-        <div class="wrap d-md-flex">
-          <div class="login-img"></div>
+      <div class="col-md-6">
+        <div class="wrap d-md-flex justify-content-center">
           <div class="login-wrap p-4 p-md-5">
             <div class="d-flex">
+<!--              Card Heading-->
               <div class="w-100">
-                <h3 class="mb-4 login-form-heading">Sign In</h3>
+                <h3 class="mb-4 login-form-heading text-uppercase">Welcome</h3>
               </div>
+
+<!--              Social Media Icons-->
               <div class="w-100">
                 <p class="social-media d-flex justify-content-end">
-                  <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://facebook.com" class="social-icon d-flex align-items-center justify-content-center" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="https://twitter.com" class="social-icon d-flex align-items-center justify-content-center" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
                 </p>
               </div>
             </div>
 
-            <%= form_with(scope: :session, url: login_path, class: "", local: true) do |form| %>
-              <div class="login-form-group mb-3">
-                <%= form.label :email, class:"login-label" %><br />
-                <%= form.email_field :email, class:"login-form-control", placeholder:"Enter your email" %><br />
+<!--            Login Form Start-->
+            <%= form_with(scope: :session, url: login_path, local: true) do |form| %>
+              <div class="login-form-group form-floating mb-3">
+                <%= form.email_field :email, class:"form-control", placeholder:"name@example.com", id:"floatingInput", required: true %>
+                <%= form.label :email, "Email Address", for:"floatingInput", class:"login-label" %>
               </div>
 
-              <div class="login-form-group mb-3">
-                <%= form.label :password, class:"login-label" %><br />
-                <%= form.password_field :password, class:"login-form-control", placeholder:"Enter your password" %><br />
+              <div class="login-form-group form-floating mb-3">
+                <%= form.password_field :password, class:"form-control", placeholder:"Enter Password", id:"floatingInput", required: true %>
+                <%= form.label :password, for:"floatingInput", class:"login-label" %>
               </div>
 
-              <div class="login-form-group">
-                <%= form.submit "Log In" , class:'login-form-control btn btn-primary rounded submit-btn px-3' %>
+              <div class="login-form-group text-center">
+                <%= form.submit "Login" , class:'login-form-control btn btn-primary rounded submit-btn px-3' %>
               </div>
-            <p class="text-center mt-3">
-              Not a member? <a class="login-register-link" data-toggle="tab" href="#">Sign Up</a>
-            </p>
+              <p class="mt-4 login-register-link">
+                Not a member ?
+                <%= link_to 'Sign Up', signup_path, class: "text-primary" %>
+              </p>
+            <% end %>
+<!--            Login Form End-->
           </div>
-
-
         </div>
       </div>
     </div>
-    <% end %>
   </div>
 </section>
