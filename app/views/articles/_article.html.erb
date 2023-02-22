@@ -1,58 +1,61 @@
-<div class="row">
-	<% @articles.each do |article| %>
-	<div class="col-md-4 my-3 px-3">
-		<div class="card h-100">
+<section style="padding-top: 2rem;padding-bottom: 2.5rem;">
+	<div class="row">
+		<% @articles.each do |article| %>
+		<div class="col-md-4 my-3 px-3">
+			<div class="card h-100">
 
-<!--			Thumbnail-->
-			<div class="d-flex justify-content-center">
-				<%= link_to image_tag(article.thumbnail_resize, class: "card-img-top"), article_path(article), class: "card-img-top" %>
-			</div>
-			<div class="card-body">
+	<!--			Thumbnail-->
+				<div class="d-flex justify-content-center">
+					<%= link_to image_tag(article.thumbnail_resize, class: "card-img-top"), article_path(article), class: "card-img-top" %>
+				</div>
+				<div class="card-body">
 
-				<!--Categories-->
-				<p class="category mb-2 d-block">
-					<%= render article.categories %>
-				</p>
+					<!--Categories-->
+					<p class="category mb-2 d-block">
+						<%= render article.categories %>
+					</p>
 
-<!--				Title-->
-				<h3 class="card-title mb-4">
-					<%= link_to article.title, article_path(article), class: "card-title-link" %>
-				</h3>
+	<!--				Title-->
+					<h3 class="card-title mb-4">
+						<%= link_to article.title, article_path(article), class: "card-title-link" %>
+					</h3>
 
-				<!--Description-->
-				<p class="card-text mb-4">
-					<%= article.body %>
-				</p>
+					<!--Description-->
+					<p class="card-text mb-4">
+						<%= article.body %>
+					</p>
 
-				<div class="author mb-4 d-flex justify-content-center align-items-center">
+					<div class="author mb-4 d-flex justify-content-center align-items-center">
 
-					<!--User Pic-->
-					<div class="d-flex justify-content-center align-items-center">
-						<%= link_to image_tag(article.user.avatar_article, class: "article-card-profile-image"), user_path(article.user), class: "article-card-profile-image" %>
+						<!--User Pic-->
+						<div class="d-flex justify-content-center align-items-center">
+							<%= link_to image_tag(article.user.avatar_article, class: "article-card-profile-image"), user_path(article.user), class: "article-card-profile-image" %>
+						</div>
+
+
+						<div class="ml-3 info">
+							<p class="author-label">
+								Written By
+							</p>
+							<h3 class="author-name">
+								<!--Author-->
+								<%= link_to article.user.username, user_path(article.user), class:"author-name" %>
+							</h3>
+							<p class="article-time">
+								Updated <%= time_ago_in_words(article.updated_at) %> Ago
+							</p>
+						</div>
 					</div>
 
-
-					<div class="ml-3 info">
-						<p class="author-label">
-							Written By
-						</p>
-						<h3 class="author-name">
-							<!--Author-->
-							<%= link_to article.user.username, user_path(article.user), class:"author-name" %>
-						</h3>
-						<p class="article-time">
-							Updated <%= time_ago_in_words(article.updated_at) %> Ago
-						</p>
+					<div class="flex-row m-2 card-footer">
+						<%= link_to "Continue Reading", article_path(article), class: "article-link" %>
+						<i class="fa-solid fa-arrow-right article-link-arrow"></i>
 					</div>
 				</div>
 
-				<div class="flex-row m-2 card-footer">
-					<%= link_to "Continue Reading", article_path(article), class: "article-link" %>
-					<i class="fa-solid fa-arrow-right article-link-arrow"></i>
-				</div>
 			</div>
-
 		</div>
+		<% end %>
 	</div>
-	<% end %>
-</div>
+
+</section>

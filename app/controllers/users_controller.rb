@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user_id
-      flash[:notice] = "Welcome to the Alpha Blog #{@user.username}, you have successfully signed up"
+      flash[:notice] = "Welcome to the Blog #{@user.username}, you have successfully signed up"
       redirect_to @user
     else
       render :new
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.articles.paginate(page: params[:page], per_page: 1)
+    @articles = @user.articles.paginate(page: params[:page], per_page: 9)
   end
 
   # Private methods : DRY

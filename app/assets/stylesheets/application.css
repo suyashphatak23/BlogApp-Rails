@@ -62,7 +62,7 @@ a {
 
 /* Navbar Start */
 .navbar-brand {
-	font-size: 32px;
+	font-size: 28px;
 	font-family: "Poppins", Arial, sans-serif;
 	font-weight: bold;
 }
@@ -123,6 +123,7 @@ a {
 .login-wrap{
 	position: relative;
 	background:rgba(255,255,255,0.7);
+	/*background-color: rgba(0, 0, 0, 0.6);*/
 	width: 100%;
 }
 
@@ -258,13 +259,18 @@ a {
 
 
 /* Article Detail View Start */
+.article-detail-view{
+	padding-top: 2rem;
+	padding-bottom: 2.5rem;
+}
+
 .full-article{
 	padding: 0 5rem;
 }
 
 .article-profile-image{
-	width: 170px;
-	height: 170px;
+	width: 180px;
+	height: 180px;
 	border-radius: 50%;
 }
 
@@ -519,7 +525,68 @@ a {
 	padding-top:2rem;
 	padding-bottom: 2.5rem;
 }
+
+.category-card{
+	text-align: center;
+	color: white;
+	font-family: "Poppins", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	width: 20rem;
+	height: 10rem;
+	background-image: url("assets/category_bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.category-card-body{
+	background:rgba(0,0,0,0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.category-card-body:hover{
+	background:rgba(0,0,0,0);
+}
+
+.category-card-title{
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 24px;
+	letter-spacing: 0.3px;
+	line-height: 1.2;
+	color: white;
+}
+
+.category-card-text{
+	color: white;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.2px;
+}
 /* Category Listing End*/
+
+/* Category Detailed View Start */
+.category-detail-tag{
+	padding: 10px;
+	margin: 5px 0;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.category-detail-heading{
+	padding: 10px;
+	margin: 5px 0;
+	font-size: 34px;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.8);
+	font-family: "Poppins", Arial, sans-serif;
+}
+/* Category Detailed View End */
 
 /* Footer Start */
 .footer-text{

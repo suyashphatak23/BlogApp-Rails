@@ -9,7 +9,12 @@
 
     <%= render "article", article: @article %>
 
-    <%= render "layouts/pagination", obj:@article %>
+    <div class="apple_pagination my-3">
+      <p class="page_info">
+        <%= page_entries_info @article %>
+      </p>
+      <%= will_paginate @article, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
   </div>
 </section>
 

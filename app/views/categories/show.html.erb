@@ -1,15 +1,31 @@
-<div class="container text-center">
-    <h1 class="mt-4">Category: <%= @category.name %></h1>
+<section style="padding-top: 2rem; padding-bottom: 2.5rem;">
+  <div class="container text-center">
+    <div class="d-flex justify-content-center">
+      <h1 class="mt-2 category-detail-tag">
+        <svg width="22" height="22">
+          <path d="M4.66 8.72L3.43 9.95a1.75 1.75 0 0 0 0 2.48l5.14 5.13c.7.7 1.8.69 2.48 0l1.23-1.22 5.35-5.35a2 2 0 0 0 .51-1.36l-.32-4.29a2.42 2.42 0 0 0-2.15-2.14l-4.3-.33c-.43-.03-1.05.2-1.36.51l-.79.8-2.27 2.28-2.28 2.27zm9.83-.98a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5z" fill-rule="evenodd"></path>
+        </svg>
+      </h1>
+      <h1 class="mt-2 category-detail-heading">
+        <%= @category.name %>
+      </h1>
+    </div>
 
     <% if logged_in? && current_user.admin? %>
-        <div class="mt-4">
-            <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-outline-info" %>
-        </div>
+      <div class="mt-2">
+        <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-outline-info" %>
+      </div>
     <% end %>
 
-    <h3 class="mt-4">Articles</h3>
-
     <%= render 'articles/article' %>
-    <%= render "layouts/pagination", obj:@articles %>
-</div>
+
+    <div class="apple_pagination my-3">
+      <p class="page_info">
+        <%= page_entries_info @articles %>
+      </p>
+      <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+  </div>
+</section>
+
 

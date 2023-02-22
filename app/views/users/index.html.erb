@@ -33,5 +33,10 @@
 </div>
 
 <div class="container text-center">
-	<%= render "layouts/pagination", obj:@article %>
+	<div class="apple_pagination my-3">
+		<p class="page_info">
+			<%= page_entries_info @users %>
+		</p>
+		<%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+	</div>
 </div>

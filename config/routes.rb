@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Home & About
-  root "pages#home"
+  root 'pages#home'
   get 'about', to: 'pages#about'
   resources :articles
 
@@ -15,4 +17,4 @@ Rails.application.routes.draw do
 
   # Category routes
   resources :categories, except: [:destroy]
-end 
+end
