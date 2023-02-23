@@ -6,6 +6,7 @@
  *= require trix
 */
 
+
 /*
  * We need to override trix.css’s image gallery styles to accommodate the
  * <action-text-attachment> element we wrap around attachments. Otherwise,
@@ -16,6 +17,7 @@
   flex: 1 0 33%;
   padding: 0 0.5em;
   max-width: 33%;
+  justify-content: center;
 }
 
 .trix-content .attachment-gallery.attachment-gallery--2 > action-text-attachment,

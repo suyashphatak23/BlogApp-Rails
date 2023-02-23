@@ -1,4 +1,60 @@
-<div class="container text-center">
-	<h1 class="display-4">Edit Article</h1>
-	<%= render "form", article: @article %>
-</div>
+<section class="article-new-form">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-2">
+			<div class="col-md-7 heading-section text-center">
+				<h2 class="mb-4">Edit Article</h2>
+				<p>
+					Instructions<br>
+					<span class="text-danger">*</span> You can make multiple selection from the list below or can be empty.<br>
+					<span class="text-danger">*</span> Please upload a thumbnail for article, it will be shown in list of articles.<br>
+					<span class="text-danger">*</span> Please upload a banner image that will highlight your article.<br>
+					<span class="text-danger">*</span> For content section you can use all the text formatting, you can also attach images or files.<br>
+					<span class="text-warning">Sorry for bad experience in content section.</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container new-article shadow">
+		<h1>Article Layout</h1>
+		<%= render partial:'shared/errors', locals: {obj: @article} %>
+
+		<%= form_with(model: @article, class: "mb-3", local: true) do |f| %>
+			<div class="form-group my-2">
+				<%= f.label :title, class: "form-label article-form-label" %>
+				<%= f.text_area :title, class: "form-control form-width-50", placeholder: "Title will be displayed on all pages.", :required => true, rows: 4 %>
+			</div>
+
+			<div class="form-group my-2">
+				<%= f.label :description, class: "form-label article-form-label" %>
+				<%= f.text_area :body , class:"form-control form-width-50", placeholder: "Description will be displayed on all pages.", required: true, rows: 5 %>
+			</div>
+
+			<div class="form-group my-2">
+				<%= f.label :category, class: "form-label article-form-label" %>
+				<%= f.collection_select(:category_ids, Category.all, :id, :name, { prompt: "( You can make multiple selection by pressing Ctrl button from the list below )"}, { multiple: true, size: 15, class: "form-select form-width-50" }) %>
+			</div>
+
+			<div class="form-group my-2">
+				<%= f.label :thumbnail, class: "form-label article-form-label", for: "formFile" %>
+				<%= f.file_field :thumbnail, class:"form-control form-width-50", id: "formFile" %>
+			</div>
+
+			<div class="form-group my-2">
+				<%= f.label :banner, class: "form-label article-form-label", for: "formFile" %>
+				<%= f.file_field :banner, class:"form-control form-width-50", id: "formFile" %>
+			</div>
+
+			<div class="form-group my-2">
+				<%= f.label :content, class: "form-label article-form-label" %>
+				<div class="overflow-auto form-control">
+					<%= f.rich_text_area :content, placeholder: "You can also use and other files in your article. This is main body.", required: true, style:"height:100%;" %>
+				</div>
+			</div>
+
+			<div class="form-group my-2 text-center">
+				<%= f.submit class: "btn btn-outline-secondary mt-2" %>
+			</div>
+		<% end %>
+	</div>
+</section>

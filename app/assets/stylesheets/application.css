@@ -102,11 +102,29 @@ a {
 
 
 /* Article Form Start */
+
+.article-new-form{
+	padding-top: 2rem;
+	padding-bottom: 2.5rem;
+	background: #eee;
+}
+
 .new-article{
-	background: #dee9ff;
+	background: #fff;
 	text-align: center;
-	padding: 1rem;
+	padding: 2rem;
 	border-radius: 20px;
+}
+
+.form-width-50{
+	width: 60%;
+	margin: auto;
+}
+
+.article-form-label{
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	margin-top: 1.5rem;
 }
 /* Article Form End */
 
@@ -600,3 +618,74 @@ a {
 	color: wheat;
 }
 /* Footer End */
+
+/* Trix Editor Start */
+trix-toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: #f9f7f7;
+	border: 0 !important;
+	border-top-right-radius: 0.5em;
+	border-top-left-radius: 0.5em;
+	padding: 0.5em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-top: 0.5em;
+	white-space: unset;
+}
+
+trix-editor {
+	height:20em;
+	text-align:left;
+	border: 1px solid white;
+	padding: 0.5rem 1rem;
+}
+
+
+trix-toolbar .trix-button-group {
+	/* border-color: #ddd;
+    border-bottom-color: #ccc; */
+	overflow: hidden;
+	border-radius: 4px;
+	margin-bottom: 0;
+	border: 0;
+}
+
+trix-toolbar .trix-button:not(:first-child) {
+	border-left: 0;
+}
+
+trix-toolbar .trix-button {
+	border: 0;
+	background-color: #f1f1f1;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+trix-toolbar .trix-button:hover {
+	background-color: rgba(0, 0, 0, 0.78);
+	color: white;
+	transition: .2s all ease-in-out;
+}
+
+trix-toolbar .trix-button .trix-button--icon::before {
+	opacity: 0.75;
+}
+
+trix-editor:empty:not(:focus)::before {
+	color: #a0aec0;
+}
+
+.trix-content h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 0.75rem;
+}
+
+.trix-content pre {
+	border-radius: 0.5em;
+}
+/* Trix Editor End */
