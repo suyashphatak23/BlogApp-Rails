@@ -20,6 +20,10 @@ class User < ApplicationRecord
   end
 
   def avatar_medium
-    avatar.variant(resize_to_fill: [180, 180]).processed
+    avatar.variant(resize_to_fill: [140, 140]).processed
+  end
+
+  def avatar_lg
+    avatar.variant(resize_to_fill: [150, 150]).processed
   end
 end
