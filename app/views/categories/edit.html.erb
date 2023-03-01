@@ -1,11 +1,15 @@
-<h1 class="text-center mt-4">Edit category name</h1>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-10">
-      <%= render 'form' %>
+<section class="bg-white" style="padding-top: 2rem;padding-bottom: 6rem;">
+  <div class="container">
+    <div class="row justify-content-center mb-3 pb-1">
+      <div class="col-md-7 heading-section text-center">
+        <h2 class="mb-4">Edit Category</h2>
+        <p>
+          Instructions<br>
+          <span class="text-danger">*</span> Please check if the category is present.<br>
+          <span class="text-danger">*</span> If the category is present, error will be shown.<br>
+        </p>
+      </div>
     </div>
-    <div class="mb-3">
-      <%= link_to '[ Cancel and return to category ]', category_path(@category), class: "text-info" %>
-    </div>
+    <%= render 'form' %>
   </div>
-</div>
+</section>
