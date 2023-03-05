@@ -13,7 +13,9 @@
         <%= link_to " ", edit_category_path(@category), class: "fa-regular fa-pen-to-square edit-icon text-primary", style:"padding: 20px 10px; margin: 15px 0;font-weight:900;" %>
       <% end %>
     </div>
-
+    <p class="category-detail-description mx-4">
+      <%= @category.desc %>
+    </p>
 
 
     <%= render 'articles/article' %>

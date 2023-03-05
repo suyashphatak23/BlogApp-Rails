@@ -47,7 +47,7 @@
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.3.26, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.38.0, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.2.0, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.2.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.7.1, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.12.0, ruby-3.2.0-p0) [gem]" level="application" />
@@ -68,7 +68,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.12.0, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.17.0, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.6.0, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.6.1, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.3.4, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.3.3, ruby-3.2.0-p0) [gem]" level="application" />
@@ -79,7 +79,7 @@
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v5.0.1, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.6.5, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.2, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.6.2, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.6.3, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.0.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.4.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, ruby-3.2.0-p0) [gem]" level="application" />
@@ -90,9 +90,9 @@
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.7.0, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.3.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.46.0, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.26.0, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.11.0, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.47.0, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.27.0, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-vips (v2.1.4, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.8.1, ruby-3.2.0-p0) [gem]" level="application" />
@@ -102,7 +102,7 @@
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.2.1, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.2.1, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.3.2, ruby-3.2.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.3.3, ruby-3.2.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.4.0, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo-data (v1.2022.7, ruby-3.2.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.4.2, ruby-3.2.0-p0) [gem]" level="application" />

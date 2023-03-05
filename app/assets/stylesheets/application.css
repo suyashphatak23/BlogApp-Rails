@@ -666,6 +666,14 @@ img:hover {
 	color: rgba(0, 0, 0, 0.8);
 	font-family: "Poppins", Arial, sans-serif;
 }
+
+.category-detail-description{
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.8;
+	font-weight: 500;
+	color: #999999;
+}
 /* Category Detailed View End */
 
 /* User Listing Start */
