@@ -1,22 +1,28 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-    def home
-        redirect_to articles_path if logged_in?
-    end
+  def home
+      if logged_in?
+          redirect_to article_path
+      else
+          redirect_to root_path
+      end
+  end
 
-    helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?
 
-    def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 
-    def logged_in?
-        !!current_user
-    end
+  def logged_in?
+    !!current_user
+  end
 
-    def require_user
-        unless logged_in?
-            flash[:alert] = "You must be logged in to perform this action."
-            redirect_to login_path
-        end
-    end
+  def require_user
+    return if logged_in?
+
+    flash[:alert] = 'You must be logged in to perform this action.'
+    redirect_to login_path
+  end
 end

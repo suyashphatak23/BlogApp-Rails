@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
 /*
 font-family: 'Lato', sans-serif;
 font-family: 'Montserrat', sans-serif;
@@ -849,3 +851,328 @@ trix-editor:empty:not(:focus)::before {
 	border-radius: 0.5em;
 }
 /* Trix Editor End */
+
+
+/* Homepage Start */
+
+/* Banner Slider Start */
+
+.banner-slider{
+	padding: 3rem 2rem;
+	background: #eee;
+}
+
+.banner-img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+.owl-carousel {
+	position: relative;
+}
+
+.owl-carousel .owl-item {
+	opacity: 1;
+}
+
+.owl-carousel .owl-item.active {
+	opacity: 1;
+}
+
+.owl-carousel .owl-nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+	position: absolute;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin-top: -10px;
+	color: rgba(0, 0, 0, 0.2) !important;
+	-webkit-transition: 0.7s;
+	-o-transition: 0.7s;
+	transition: 0.7s;
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.owl-carousel .owl-nav .owl-prev,
+	.owl-carousel .owl-nav .owl-next {
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+}
+
+.owl-carousel .owl-nav .owl-prev span:before,
+.owl-carousel .owl-nav .owl-next span:before {
+	font-size: 16px;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.owl-carousel .owl-nav .owl-prev span:before,
+	.owl-carousel .owl-nav .owl-next span:before {
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+}
+
+.owl-carousel .owl-nav .owl-prev:hover span:before,
+.owl-carousel .owl-nav .owl-next:hover span:before {
+	color: #b063c5;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+	right: 0;
+	margin-right: 20px;
+}
+
+.owl-carousel .owl-nav .owl-next {
+	right: 0;
+}
+
+.owl-carousel .owl-dots {
+	text-align: left;
+	margin-top: 10px;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+	width: 10px;
+	height: 10px;
+	margin: 5px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover, .owl-carousel .owl-dots .owl-dot:focus {
+	outline: none !important;
+}
+
+.owl-carousel .owl-dots .owl-dot.active {
+	background: #b063c5;
+}
+
+.owl-carousel.owl-drag .owl-item {
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+}
+
+.work {
+	width: 100%;
+}
+
+
+.work .banner-img {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	border-radius: 15px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+	-moz-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+	box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+	z-index: 0;
+}
+
+.work .banner-img:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	z-index: -1;
+	background: rgba(255, 93, 177, 0);
+	background: -moz-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 93, 177, 0)), color-stop(42%, rgba(148, 54, 103, 0)), color-stop(100%, black));
+	background: -webkit-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+	background: -o-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+	background: -ms-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 93, 177, 0)), color-stop(42%, rgba(148, 54, 103, 0)), to(black));
+	background: linear-gradient(to bottom, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#000000', GradientType=0 );
+	opacity: .6;
+}
+
+.work .text {
+	padding: 35px;
+	padding-top: 0;
+}
+
+.work .text h3 {
+	font-size: 34px;
+	font-weight: 400;
+	font-family: "Playfair Display", serif;
+	margin-bottom: 0;
+	color: #fff;
+}
+
+.work .text .cat {
+	font-size: 12px;
+	color: #b063c5;
+	font-weight: 400;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 1px 8px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: inline-block;
+	margin-bottom: 5px; }
+
+/* Banner Slider End */
+
+
+
+.image-box {
+	position: relative;
+}
+
+
+.image-box__background,
+.image-box__overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+/*
+The background image div sizes and positions the background itself.
+It's also at the bottom-most position in our "div stack" (z-index 1)
+
+We set the image url via a CSS custom property, that's set via the style attribute in our HTML
+*/
+.image-box__background {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: var(--image-url);
+	background-attachment: fixed;
+	z-index: 1
+}
+
+/*
+The overlay div is just a colored element with some opacity.
+It's above the background image in our stack, so it appears to
+darken the image
+*/
+.image-box__overlay {
+	background: rgba(0,235,235,0.7);
+
+	z-index: 2;
+}
+
+/*
+The content div is at the top of our stack.
+We'd probably add some padding or flexbox properties here as well,
+to place the content appropriately
+*/
+.image-box__content {
+	position: relative;
+	min-height: 100vh;
+	z-index: 3;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.image-box_title{
+	border-bottom: 2px solid #fff;
+	border-top: 2px solid #fff;
+	color: #FFFFFF;
+	font-family: "Amatic SC", cursive;
+	font-size: 6rem;
+	margin: 0;
+}
+
+.image-box_subtitle{
+	color: #FFF0A5;
+	font-family: "Abril Fatface";
+	font-size: 3rem;
+	font-style: italic;
+	font-weight: 100;
+	margin: 0;
+}
+
+#articles{
+	padding: 3rem 2.5rem;
+	background: #fff;
+}
+
+#category{
+	padding: 3rem 2.5rem;
+	background: #eee;
+}
+
+/* Testinomials Start */
+#testimonial{
+	padding: 3rem 2.5rem;
+}
+
+/* Testinomials End */
+
+/* Contact Start */
+#contact{
+	padding: 3rem 2.5rem;
+	background: #eee;
+}
+
+
+.address-icon{
+	padding: 15px 0;
+	font-size: 20px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+}
+
+.social-icon{
+	padding: 15px 0;
+	font-size: 20px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+}
+
+.social-icon:hover{
+	opacity: 0.7;
+}
+
+.fa-facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.fa-linkedin {
+	background: #007bb5;
+	color: white;
+}
+
+.fa-instagram {
+	background: #125688;
+	color: white;
+}
+/* Contact End */
+
+/* Homepage End */

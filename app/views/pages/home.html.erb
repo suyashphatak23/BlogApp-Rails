@@ -1,6 +1,346 @@
-<div class="container">
-	<%= render 'layouts/messages' %>
-	<h1 class="display-4 text-center mt-3">Welcome to blog</h1>
-</div>
+
+<!--Messages-->
+<%= render 'layouts/messages' %>
 
 
+<header>
+	<div class="image-box">
+		<div
+			class="image-box__background"
+			style="--image-url: url(assets/banner.jpeg)"
+		>
+
+		</div>
+		<div class="image-box__overlay"></div>
+		<div class="image-box__content">
+			<h1 class="image-box_title">-Do Work That Matters-</h1>
+			<h3 class="image-box_subtitle">You'll never regret it.</h3>
+		</div>
+	</div>
+</header>
+
+
+<!-- Articles Start -->
+<section id="articles">
+
+	<div class="container">
+		<div class="row p-2 mb-4">
+			<div class="col-md-12 text-center">
+				<h3 class="text-uppercase p-2 m-1 mb-4" style="line-height: 1px; letter-spacing: .3px;">
+					Articles
+				</h3>
+				<p class="p-2 m-1 mt-2">
+					Our carefully curated collection of articles covers a wide range of topics, from health and wellness to technology and entertainment.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<% @articles.each do |article| %>
+				<div class="col-md-4 my-3 px-3">
+					<div class="card h-100">
+
+						<!--			Thumbnail-->
+						<div class="d-flex justify-content-center">
+							<%= link_to image_tag(article.thumbnail_resize, class: "card-img-top"), article_path(article), class: "card-img-top" %>
+						</div>
+						<div class="card-body">
+
+							<!--Categories-->
+							<p class="category mb-2 d-block">
+								<%= render article.categories %>
+							</p>
+
+							<!--				Title-->
+							<h3 class="card-title mb-4">
+								<%= link_to article.title, article_path(article), class: "card-title-link" %>
+							</h3>
+
+							<!--Description-->
+							<p class="card-text mb-4">
+								<%= article.body %>
+							</p>
+
+							<div class="author mb-4 d-flex justify-content-center align-items-center">
+
+								<!--User Pic-->
+								<div class="d-flex justify-content-center align-items-center">
+									<%= link_to image_tag(article.user.avatar_article, class: "article-card-profile-image"), user_path(article.user), class: "article-card-profile-image" %>
+								</div>
+
+
+								<div class="ml-3 info">
+									<p class="author-label">
+										Written By
+									</p>
+									<h3 class="author-name">
+										<!--Author-->
+										<%= link_to article.user.username, user_path(article.user), class:"author-name" %>
+									</h3>
+									<p class="article-time">
+										Updated <%= time_ago_in_words(article.updated_at) %> Ago
+									</p>
+								</div>
+							</div>
+
+							<div class="flex-row m-2 card-footer">
+								<%= link_to "Continue Reading", article_path(article), class: "article-link" %>
+								<i class="fa-solid fa-arrow-right article-link-arrow"></i>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+</section>
+<!-- Articles End -->
+
+
+<!-- Category Sliders Start -->
+<section class="banner-slider">
+
+	<div class="container">
+		<div class="row p-2 m-1 mb-4">
+			<div class="col-md-12 text-center">
+				<h3 class="text-uppercase p-2 m-1 mb-4" style="line-height: 1px; letter-spacing: .3px;">
+					Category
+				</h3>
+				<p class="p-2 m-1 mt-2">
+					Our categories cover everything from health and fitness to business and finance, and from travel to technology.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="featured-carousel owl-carousel">
+
+					<div class="item">
+						<div class="work">
+							<div class="banner-img d-flex align-items-end justify-content-center" style="background-image: url(assets/work-1.jpg);">
+								<div class="text w-100">
+									<span class="cat">
+										Business
+									</span>
+									<h3>
+										Transform your business with innovative solutions
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="work">
+							<div class="banner-img d-flex align-items-end justify-content-center" style="background-image: url(assets/work-2.jpg);">
+
+								<div class="text w-100">
+									<span class="cat">
+										Lifestyle
+									</span>
+									<h3>
+										<a>
+											Embrace a healthier, happier lifestyle today.
+										</a>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="work">
+							<div class="banner-img d-flex align-items-end justify-content-center" style="background-image: url(assets/work-3.jpg);">
+								<div class="text w-100">
+									<span class="cat">Personal Development</span>
+									<h3>
+										Unlock your full potential with self-improvement
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="item">
+						<div class="work">
+							<div class="banner-img d-flex align-items-end justify-content-center" style="background-image: url(assets/work-4.jpg);">
+								<div class="text w-100">
+									<span class="cat">Entertainment</span>
+									<h3>
+										Escape reality and indulge in Entertainment
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="item">
+						<div class="work">
+							<div class="banner-img d-flex align-items-end justify-content-center" style="background-image: url(assets/work-5.jpg);">
+								<div class="text w-100">
+									<span class="cat">Travel</span>
+									<h3>
+										Escape to breathtaking destinations
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Category Sliders End -->
+
+<section id="testimonial">
+
+	<div class="container">
+		<div class="row p-2 m-1 mb-4">
+			<div class="col-md-12 text-center">
+				<h3 class="text-uppercase p-2 m-1 mb-4" style="line-height: 1px; letter-spacing: .3px;">
+					Testinomials
+				</h3>
+				<p class="p-2 m-1 mt-2">
+					Hear from our community about our website.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row text-center">
+		<div class="col-md-12">
+			<!-- Carousel wrapper -->
+			<div id="testimonial-slider" class="carousel slide" data-bs-ride="carousel">
+				<!-- Inner -->
+				<div class="carousel-inner">
+					<!-- Single item -->
+					<div class="carousel-item active">
+						<p class="lead font-italic mx-4 mx-md-5">
+							"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+							numquam iure provident voluptate esse quasi, voluptas nostrum quisquam!"
+						</p>
+						<div class="mt-5 mb-4">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+									 class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									 height="100" />
+						</div>
+						<p class="text-muted mb-0">- Anna Morian</p>
+					</div>
+
+					<!-- Single item -->
+					<div class="carousel-item">
+						<p class="lead font-italic mx-4 mx-md-5">
+							"Neque cupiditate assumenda in maiores repudiandae mollitia adipisci maiores
+							repudiandae mollitia consectetur adipisicing architecto elit sed adipiscing
+							elit."
+						</p>
+						<div class="mt-5 mb-4">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
+									 class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									 height="100" />
+						</div>
+						<p class="text-muted mb-0">- Teresa May</p>
+					</div>
+
+					<!-- Single item -->
+					<div class="carousel-item">
+						<p class="lead font-italic mx-4 mx-md-5">
+							"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+							dolore eu fugiat nulla pariatur est laborum neque cupiditate assumenda in
+							maiores."
+						</p>
+						<div class="mt-5 mb-4">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+									 class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									 height="100" />
+						</div>
+						<p class="text-muted mb-0">- Kate Allise</p>
+					</div>
+				</div>
+				<!-- Inner -->
+
+			</div>
+			<!-- Carousel wrapper -->
+		</div>
+	</div>
+</section>
+
+
+<!--Contact Start-->
+<section id="contact">
+
+	<div class="container">
+		<div class="row p-2 m-1 mb-4">
+			<div class="col-md-12 text-center">
+				<h3 class="text-uppercase p-2 m-1 mb-4" style="line-height: 1px; letter-spacing: .3px;">
+					Contact Us
+				</h3>
+				<p class="p-2 m-1 mt-2">
+					Contact us for any inquiries, feedback, or support.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 d-flex justify-content-center">
+
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87164.90438133797!2d-73.98229648940968!3d40.76671766357585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0DCsDQ2JzE4LjQiTiA3M8KwNTInMTkuMiJF!5e0!3m2!1sen!2sus!4v1647586943064!5m2!1sen!2sus" width="80%" height="600" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+
+			</div>
+
+		</div>
+
+		<div class="row p-2 my-3">
+			<div class="col-md-6 d-flex justify-content-center">
+				<div>
+					<h5 class="text-center">Info</h5>
+					<p>
+						<i class="fas fa-map-marker-alt address-icon"></i>
+						123 Main Street Anytown, USA 12345
+					</p>
+
+					<p>
+						<i class="fas fa-phone address-icon"></i>
+						(123) 456-7890
+					</p>
+
+					<p>
+						<i class="fas fa-envelope address-icon"></i>
+						info@example.com
+					</p>
+
+				</div>
+			</div>
+
+			<div class="col-md-6 text-center">
+				<h5>Socials</h5>
+				<div class="social-icons">
+					<a href="#" class="fab fa-facebook social-icon"></a>
+					<a href="#" class="fab fa-twitter social-icon"></a>
+					<a href="#" class="fab fa-linkedin social-icon"></a>
+					<a href="#" class="fab fa-instagram social-icon"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<!--Contact End-->

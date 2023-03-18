@@ -5,13 +5,20 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
-      flash[:notice] = 'Logged In Successfully'
-      redirect_to user
+
+    if user
+      if user.authenticate(params[:session][:password])
+        session[:user_id] = user.id
+        flash[:notice] = 'Logged In Successfully'
+        redirect_to root_path
+
+      else
+        flash.now[:alert] = 'Login Credentials Invalid'
+        render 'new'
+      end
 
     else
-      flash.now[:alert] = 'Login Credentials Invalid'
+      flash.now[:alert] = 'User Not Found'
       render 'new'
     end
   end
