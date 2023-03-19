@@ -1032,7 +1032,7 @@ trix-editor:empty:not(:focus)::before {
 /* Banner Slider End */
 
 
-
+/* Banner Image Start */
 .image-box {
 	position: relative;
 }
@@ -1046,37 +1046,22 @@ trix-editor:empty:not(:focus)::before {
 	bottom: 0;
 	left: 0;
 }
-/*
-The background image div sizes and positions the background itself.
-It's also at the bottom-most position in our "div stack" (z-index 1)
 
-We set the image url via a CSS custom property, that's set via the style attribute in our HTML
-*/
 .image-box__background {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-image: var(--image-url);
+	background-image: url("assets/banner.jpeg");
 	background-attachment: fixed;
 	z-index: 1
 }
 
-/*
-The overlay div is just a colored element with some opacity.
-It's above the background image in our stack, so it appears to
-darken the image
-*/
 .image-box__overlay {
-	background: rgba(0,235,235,0.7);
+	background: rgba(0,235,235,0.5);
 
 	z-index: 2;
 }
 
-/*
-The content div is at the top of our stack.
-We'd probably add some padding or flexbox properties here as well,
-to place the content appropriately
-*/
 .image-box__content {
 	position: relative;
 	min-height: 100vh;
@@ -1105,6 +1090,9 @@ to place the content appropriately
 	font-weight: 100;
 	margin: 0;
 }
+
+/* Banner Image End */
+
 
 #articles{
 	padding: 3rem 2.5rem;
@@ -1176,3 +1164,17 @@ to place the content appropriately
 /* Contact End */
 
 /* Homepage End */
+
+
+
+
+/* About Us Start */
+#about{
+	padding: 2.5rem 3rem;
+}
+
+.about-info{
+	padding: 3rem 1rem;
+	margin: 1rem 1rem;
+}
+/* About Us End */
