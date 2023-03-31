@@ -1,12 +1,14 @@
 <section class="article-detail-view">
 	<div class="container mt-4">
 		<article class="full-article">
+			<!--Messages-->
+			<%= render 'layouts/messages' %>
 
 			<!--User Profile-->
 			<div class="col-md-12">
 				<div class="d-flex flex-column justify-content-center align-items-center">
 					<div class="p-2">
-						<%= link_to image_tag(@article.user.avatar_medium, class: "article-profile-image"), user_path(@article.user), class: "article-profile-image" %>
+						<%= link_to image_tag(@article.user.avatar, class: "article-profile-image"), user_path(@article.user), class: "article-profile-image" %>
 					</div>
 					<div class="p-2 text-capitalize text-center">
 						<span class="fw-bold"><%= link_to @article.user.username, user_path(@article.user) %></span><br>
@@ -17,7 +19,7 @@
 				<% if logged_in? &&  (@article.user == current_user || current_user.admin?) %>
 					<div class="d-flex flex-row justify-content-center align-items-center">
 						<%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-dark mx-2" %>
-						<%= link_to "Delete", article_path(@article), class: "btn btn-outline-dark mx-2", method: :delete, data: {confirm: "Are you sure?"} %>
+						<%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-dark mx-2" %>
 					</div>
 				<% end %>
 
@@ -49,7 +51,7 @@
 
 				<!--			Banner Image-->
 				<div class="banner">
-					<%= link_to image_tag(@article.banner_resize, class:"rounded mx-auto d-block shadow-lg"), @article.banner, class:"banner-image" %>
+					<%= link_to image_tag(@article.banner, class:"rounded mx-auto d-block shadow-lg", height: "auto", width: "750px"), @article.banner, class:"banner-image" %>
 				</div>
 
 				<!--			Article Body -->

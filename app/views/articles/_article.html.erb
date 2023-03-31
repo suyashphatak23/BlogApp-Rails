@@ -6,7 +6,7 @@
 
 	<!--			Thumbnail-->
 				<div class="d-flex justify-content-center">
-					<%= link_to image_tag(article.thumbnail_resize, class: "card-img-top"), article_path(article), class: "card-img-top" %>
+					<%= link_to image_tag(article.thumbnail, class: "card-img-top"), article_path(article), class: "card-img-top" %>
 				</div>
 				<div class="card-body">
 
@@ -29,7 +29,7 @@
 
 						<!--User Pic-->
 						<div class="d-flex justify-content-center align-items-center">
-							<%= link_to image_tag(article.user.avatar_article, class: "article-card-profile-image"), user_path(article.user), class: "article-card-profile-image" %>
+							<%= link_to image_tag(article.user.avatar, class: "article-card-profile-image"), user_path(article.user), class: "article-card-profile-image" %>
 						</div>
 
 

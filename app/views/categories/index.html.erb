@@ -9,22 +9,26 @@
     </div>
 
 <!--    Loop start-->
-    <div class="row justify-content-center">
-      <% @categories.each do |category| %>
-        <div class="col-md-4 mt-3">
-          <div class="card category-card shadow mb-5">
-            <div class="card-body category-card-body">
-              <h5 class="card-title">
-                <%= link_to category.name, category_path(category), class: "category-card-title" %>
-              </h5>
-              <p class="card-text category-card-text">
-                <%= pluralize(category.articles.count, "article") %>
-              </p>
+    <% if @categories.present? %>
+      <div class="row justify-content-center">
+        <% @categories.each do |category| %>
+          <div class="col-md-4 mt-3">
+            <div class="card category-card shadow mb-5" style="background-image: <%= category.thumb %>">
+              <div class="card-body category-card-body">
+                <h5 class="card-title">
+                  <%= link_to category.name, category_path(category), class: "category-card-title" %>
+                </h5>
+                <p class="card-text category-card-text">
+                  <%= pluralize(category.articles.count, "article") %>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-<!--        Loop end-->
-    </div>
+        <% end %>
+        <!--        Loop end-->
+      </div>
+    <% else %>
+      <%= render 'shared/no-records' %>
+    <% end %>
   </div>
 </section>

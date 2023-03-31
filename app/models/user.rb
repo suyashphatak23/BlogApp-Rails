@@ -7,23 +7,17 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 105 },
-                    format: { with: VALID_EMAIL_REGEX }
+            format: { with: VALID_EMAIL_REGEX }
+  validates :first_name, presence: true, length: {maximum: 30}
+  validates :last_name, presence: true, length: {maximum: 30}
+  validates :social_facebook, length: {maximum: 30}
+  validates :social_linkedin, presence: true, length: {maximum: 30}
+  validates :social_instagram, length: {maximum: 30}
 
   has_secure_password
 
-  def avatar_small
-    avatar.variant(resize_to_fill: [38, 38]).processed
-  end
+  # def avatar_article
+  #   avatar.variant(resize: "60x60").processed
+  # end
 
-  def avatar_article
-    avatar.variant(resize_to_fill: [60, 60]).processed
-  end
-
-  def avatar_medium
-    avatar.variant(resize_to_fill: [140, 140]).processed
-  end
-
-  def avatar_lg
-    avatar.variant(resize_to_fill: [150, 150]).processed
-  end
 end

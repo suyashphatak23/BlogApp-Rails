@@ -3,7 +3,11 @@
 one:
   title: MyString
   body: MyText
+  user_id: 1
+  content: MyText
 
 two:
   title: MyString
   body: MyText
+  user_id: 1
+  content: MyText

@@ -19,6 +19,14 @@
             <%= f.label :username,"Username",for:"floatingInput" %>
           </div>
           <div class="form-floating mb-3">
+            <%= f.text_field :first_name, class: "form-control", placeholder: "name", id:"floatingInput"%>
+            <%= f.label :first_name,"First Name",for:"floatingInput" %>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :last_name, class: "form-control", placeholder: "name", id:"floatingInput"%>
+            <%= f.label :last_name, "Last Name", for:"floatingInput" %>
+          </div>
+          <div class="form-floating mb-3">
             <%= f.email_field :email, class: "form-control", placeholder: "name@example.com", id:"floatingInput"%>
             <%= f.label :email,"Email Address",for:"floatingInput" %>
           </div>
@@ -29,6 +37,18 @@
           <div class="form-floating mb-3">
             <%= f.file_field :avatar, class: "form-control", id:"floatingInput"%>
             <%= f.label :profile, "Profile Picture",for:"floatingInput" %>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :social_linkedin, class: "form-control", placeholder: "link", id:"floatingInput"%>
+            <%= f.label :social_linkedin,"LinkedIn Profile Link",for:"floatingInput" %>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :social_instagram, class: "form-control", placeholder: "link", id:"floatingInput"%>
+            <%= f.label :social_instagram, "Instagram Profile Link",for:"floatingInput" %>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :social_facebook, class: "form-control", placeholder: "link", id:"floatingInput"%>
+            <%= f.label :social_facebook,"Facebook Profile Link",for:"floatingInput" %>
           </div>
           <div class="form-group justify-content-center">
             <%= f.submit class: "btn btn-outline-primary mt-2" %>

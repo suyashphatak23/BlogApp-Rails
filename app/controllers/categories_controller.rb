@@ -1,7 +1,7 @@
-# frozen_string_literal: true
-
 class CategoriesController < ApplicationController
   before_action :require_admin, except: %i[index show]
+  before_action :set_category, only: %w[show edit update destroy]
+
 
   def index
     @categories = Category.all
@@ -22,16 +22,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @articles = @category.articles.paginate(page: params[:page], per_page: 5)
+    @articles = @category.articles.paginate(page: params[:page], per_page: 6)
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:notice] = 'Category name updated successfully'
       redirect_to @category
@@ -40,10 +37,18 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category.destroy
+    redirect_to categories_path, status: :see_other
+  end
+
   private
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
   def category_params
-    params.require(:category).permit(:name, :desc)
+    params.require(:category).permit(:name, :thumb, :description)
   end
 
   def require_admin

@@ -7,14 +7,18 @@
       </div>
     </div>
 
-    <%= render "article", article: @article %>
+    <% if @articles.present? %>
+      <%= render "article", article: @article %>
+      <div class="apple_pagination my-3">
+        <p class="page_info">
+          <%= page_entries_info @article %>
+        </p>
+        <%= will_paginate @article, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      </div>
+    <% else %>
+      <%= render 'shared/no-records' %>
+    <% end %>
 
-    <div class="apple_pagination my-3">
-      <p class="page_info">
-        <%= page_entries_info @article %>
-      </p>
-      <%= will_paginate @article, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-    </div>
   </div>
 </section>
 

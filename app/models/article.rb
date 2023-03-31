@@ -9,11 +9,4 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 5 }
 
-  def thumbnail_resize
-    thumbnail.variant(resize_to_fill: [300, 330]).processed
-  end
-
-  def banner_resize
-    banner.variant(resize_to_fill: [800, 700]).processed
-  end
 end

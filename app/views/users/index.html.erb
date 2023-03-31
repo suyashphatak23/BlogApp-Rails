@@ -8,55 +8,54 @@
 			</div>
 		</div>
 
-		<div class="container profile-page">
-			<div class="row justify-content-center">
-				<% @users.each do |user| %>
-					<div class="col-sm-5 my-4">
-						<div class="card user-list-profile-header">
-							<div class="user-list-body">
-								<div class="row">
-									<div class="d-flex">
-										<div class="user-list-profile-image p-2 m-2 justify-content-center">
-											<%= link_to image_tag(user.avatar_medium), user_path(user), alt:"Profile Pic" %>
-										</div>
-										<div class="user-list-info p-2 m-2 mt-3 text-center">
-											<h4 class="user-list-heading">
-												<strong>
-													<%= link_to user.username, user, class:"nav-link text-uppercase" %>
-												</strong>
-											</h4>
-											<p>
-												<%= user.email %>
-											</p>
-											<p>
-												Contributions: <%= pluralize(user.articles.count, "Article") %>
-											</p>
-											<div>
-												<%= link_to "View profile", user, class: "btn btn-outline-success" %>
+		<% if @users.present? %>
+			<div class="container profile-page">
+				<div class="row justify-content-center">
+					<% @users.each do |user| %>
+						<div class="col-sm-5 my-4">
+							<div class="card user-list-profile-header">
+								<div class="user-list-body">
+									<div class="row">
+										<div class="d-flex">
+											<div class="user-list-profile-image p-2 m-2 justify-content-center">
+												<%= link_to image_tag(user.avatar), user_path(user), alt:"Profile Pic" %>
+											</div>
+											<div class="user-list-info p-2 m-2 mt-3 text-center">
+												<h4 class="user-list-heading">
+													<strong>
+														<%= link_to user.username, user, class:"nav-link text-uppercase" %>
+													</strong>
+												</h4>
+												<p>
+													<%= user.email %>
+												</p>
+												<p>
+													Contributions: <%= pluralize(user.articles.count, "Article") %>
+												</p>
+												<div>
+													<%= link_to "View profile", user, class: "btn btn-outline-success" %>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				<% end %>
+					<% end %>
+				</div>
 			</div>
-		</div>
 
-		<%# if current_user.admin? %>
-			<%#= link_to "Delete-->
-					profile", user_path(user), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure you want to delete user?"}  %>
-		<%# end %>
-
-		<div class="container text-center">
-			<div class="apple_pagination my-3">
-				<p class="page_info">
-					<%= page_entries_info @users %>
-				</p>
-				<%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+			<div class="container text-center">
+				<div class="apple_pagination my-3">
+					<p class="page_info">
+						<%= page_entries_info @users %>
+					</p>
+					<%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+				</div>
 			</div>
-		</div>
+		<% else %>
+				<%= render 'shared/no-records' %>
+		<% end %>
 	</div>
 </section>
 

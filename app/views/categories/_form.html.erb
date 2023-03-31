@@ -2,13 +2,18 @@
 	<div class="col-md-7 category-form">
 		<%= form_with(model:@category, class: "p-3 mb-3", local: true) do |f| %>
 			<div class="form-floating mb-3">
-				<%= f.text_field :name, id: "floatingInput", class: "form-control", placeholder: "Enter Category", :required => true %>
+				<%= f.text_field :name, id: "floatingInput", class: "form-control", placeholder: "Enter Category", required: true %>
 				<%= f.label :name, "Category name", for:"floatingInput" %>
 			</div>
 
 			<div class="form-floating mb-3">
-				<%= f.text_area :desc, id: "floatingInput", class: "form-control", placeholder: "Description", :required => true, style:"height:100px;" %>
-				<%= f.label :desc, "Description", for:"floatingInput" %>
+				<%= f.text_area :description, id: "floatingInput", class: "form-control", placeholder: "Description", required: true, style:"height:100px;" %>
+				<%= f.label :description, "Description", for:"floatingInput" %>
+			</div>
+
+			<div class="form-floating mb-3">
+				<%= f.file_field :thumb, id: "floatingInput", class: "form-control", required: true %>
+				<%= f.label :thumb, "Image", for:"floatingInput" %>
 			</div>
 
 			<div class="form-group text-center">

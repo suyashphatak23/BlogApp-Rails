@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   # Home & About
   root "pages#home"
@@ -18,5 +16,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   # Category routes
-  resources :categories, except: [:destroy]
+  resources :categories
 end

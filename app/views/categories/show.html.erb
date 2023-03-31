@@ -10,22 +10,35 @@
         <%= @category.name %>
       </h1>
       <% if logged_in? && current_user.admin? %>
-        <%= link_to " ", edit_category_path(@category), class: "fa-regular fa-pen-to-square edit-icon text-primary", style:"padding: 20px 10px; margin: 15px 0;font-weight:900;" %>
+        <%= link_to "", edit_category_path(@category), class: "fa-regular fa-pen-to-square edit-icon text-primary", style:"padding: 20px 10px; margin: 15px 0;font-weight:900;" %>
+        <%= link_to "", category_path(@category), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "fa-regular fa-trash-can text-danger", style:"padding: 20px 10px;margin: 15px 0;font-weight: 900; font-size: 20px;" %>
       <% end %>
     </div>
     <p class="category-detail-description mx-4">
-      <%= @category.desc %>
+      <%= @category.description %>
     </p>
 
+    <%= link_to image_tag(@category.thumb, class: "shadow-lg rounded my-4", style: "width:45em;height:auto;"), @category.thumb, alt: "category", target: "_blank" %>
 
-    <%= render 'articles/article' %>
-
-    <div class="apple_pagination my-3">
-      <p class="page_info">
-        <%= page_entries_info @articles %>
-      </p>
-      <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    <div class="text-center mt-2">
+      <h1 class="mt-2 category-detail-heading">
+        Articles
+      </h1>
     </div>
+
+
+    <% if @articles.present? %>
+      <%= render 'articles/article' %>
+
+      <div class="apple_pagination my-3">
+        <p class="page_info">
+          <%= page_entries_info @articles %>
+        </p>
+        <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      </div>
+    <% else %>
+      <%= render 'shared/no-records' %>
+    <% end %>
   </div>
 </section>
 

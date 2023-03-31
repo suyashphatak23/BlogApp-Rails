@@ -1,15 +1,13 @@
-# frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
-  def home
-      if logged_in?
-          redirect_to article_path
-      else
-          redirect_to root_path
-      end
-  end
-
   helper_method :current_user, :logged_in?
+
+  def home
+    if logged_in?
+      redirect_to article_path
+    else
+      redirect_to root_path
+    end
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

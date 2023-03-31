@@ -30,6 +30,16 @@
               </div>
 
               <div class="register-form-group form-floating mb-3">
+                <%= f.text_field :first_name, class:"form-control", placeholder:"yourfirstname", id:"floatingInput", required: true %>
+                <%= f.label :first_name, for:"floatingInput", class:"register-label" %>
+              </div>
+
+              <div class="register-form-group form-floating mb-3">
+                <%= f.text_field :last_name, class:"form-control", placeholder:"yourlastname", id:"floatingInput", required: true %>
+                <%= f.label :last_name, for:"floatingInput", class:"register-label" %>
+              </div>
+
+              <div class="register-form-group form-floating mb-3">
                 <%= f.email_field :email, class:"form-control", placeholder:"name@example.com", id:"floatingInput", required: true %>
                 <%= f.label :email, "Email Address", for:"floatingInput", class:"register-label" %>
               </div>
@@ -40,7 +50,22 @@
               </div>
 
               <div class="register-form-group form-floating mb-3">
-                <%= f.file_field :avatar, class:"form-control", placeholder:"name@example.com", id:"floatingInput", required: true %>
+                <%= f.text_field :social_linkedin, class:"form-control", placeholder:"link", id:"floatingInput", required: true %>
+                <%= f.label :social_linkedin, "LinkedIn Link", for:"floatingInput", class:"register-label" %>
+              </div>
+
+              <div class="register-form-group form-floating mb-3">
+                <%= f.text_field :social_instagram, class:"form-control", placeholder:"link", id:"floatingInput" %>
+                <%= f.label :social_instagram, "Instagram Link", for:"floatingInput", class:"register-label" %>
+              </div>
+
+              <div class="register-form-group form-floating mb-3">
+                <%= f.text_field :social_facebook, class:"form-control", placeholder:"link", id:"floatingInput" %>
+                <%= f.label :social_facebook, "Facebook Link", for:"floatingInput", class:"register-label" %>
+              </div>
+
+              <div class="register-form-group form-floating mb-3">
+                <%= f.file_field :avatar, class:"form-control", id:"floatingInput", required: true %>
                 <%= f.label :avatar, "Profile Picture", for:"floatingInput", class:"register-label" %>
               </div>
 

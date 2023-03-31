@@ -14,19 +14,19 @@
 			</div>
 		</div>
 
-		<div class="row container d-flex justify-content-center p-3">
+		<div class="row container d-flex justify-content-center">
 			<div class="col-xl-8 col-md-12">
 				<div class="card user-card-full shadow-lg">
 					<div class="row justify-content-center">
 						<div class="col-sm-6 user-profile align-items-center">
 							<div class="card-block text-center text-white">
 								<div class="mb-3">
-									<%= link_to image_tag(@user.avatar_lg, class:"user-profile-img"), @user.avatar, class:"user-profile-img", alt:"User Profile Image" %>
+									<%= link_to image_tag(@user.avatar, class:"user-profile-img"), @user.avatar, class:"user-profile-img", alt:"User Profile Image" %>
 								</div>
-								<h6 class="user-card-username">
-									<%= @user.username %>
+								<h6 class="user-card-username text-capitalize mb-0">
+									<%= @user.first_name %> <%= @user.last_name %>
 								</h6>
-								<% if logged_in? && @user == current_user %>
+								<% if logged_in? && (@user == current_user || current_user.admin?) %>
 									<%= link_to " ", edit_user_path(@user), class: "fa-regular fa-pen-to-square edit-icon mt-3" %>
 								<% end %>
 							</div>
@@ -39,8 +39,20 @@
 										<h6 class="user-info-value"><%= @user.username %></h6>
 									</div>
 									<div class="col-sm-12">
+										<p class="user-info-label">Name</p>
+										<h6 class="user-info-value text-capitalize"><%= @user.first_name %> <%= @user.last_name %></h6>
+									</div>
+									<div class="col-sm-12">
 										<p class="user-info-label">Email</p>
 										<h6 class="user-info-value"><%= @user.email %></h6>
+									</div>
+									<div class="col-sm-12">
+										<p class="user-info-label">Socials</p>
+										<h6 class="user-info-value">
+											<a href="<%= @user.social_linkedin %>" class="fab fa-linkedin social-icon"></a>
+											<a href="<%= @user.social_instagram %>" class="fab fa-instagram social-icon"></a>
+											<a href="<%= @user.social_facebook %>" class="fab fa-facebook social-icon"></a>
+										</h6>
 									</div>
 									<div class="col-sm-12">
 										<p class="user-info-label">Joined On</p>
@@ -59,15 +71,18 @@
 		</div>
 
 		<h3 class="text-center mt-4">Articles</h3>
-		<%= render 'articles/article' %>
+		<% if @articles.present? %>
+			<%= render 'articles/article' %>
 
-		<div class="apple_pagination my-3">
-			<p class="page_info">
-				<%= page_entries_info @articles %>
-			</p>
-			<%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-		</div>
-
+			<div class="apple_pagination my-3">
+				<p class="page_info">
+					<%= page_entries_info @articles %>
+				</p>
+				<%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+			</div>
+		<% else %>
+			<%= render partial: "shared/no-records" %>
+		<% end %>
 	</div>
 </section>
 
