@@ -28,6 +28,7 @@
 								</h6>
 								<% if logged_in? && (@user == current_user || current_user.admin?) %>
 									<%= link_to " ", edit_user_path(@user), class: "fa-regular fa-pen-to-square edit-icon mt-3" %>
+									<%= link_to " ", user_path(current_user), class: "fa-regular fa-trash-can edit-icon mt-3 ms-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 								<% end %>
 							</div>
 						</div>

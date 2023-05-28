@@ -68,11 +68,6 @@
 							<hr class="dropdown-divider">
 						</li>
 						<li>
-							<%= link_to "Delete profile", user_path(current_user), class: "dropdown-item nav-item nav-link text-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li>
 							<%= link_to 'Logout', logout_path, class: "dropdown-item nav-item nav-link text-warning", method: :delete %>
 						</li>
 					</ul>
